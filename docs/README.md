@@ -9,3 +9,9 @@ Mobile-first family trip command centre for Al Bahah â†’ Al Qunfudhah Red Sea â†
 - PWA, offline shell, Bengali/English, headcount, car assignment, hotel budget, maps, WhatsApp sharing, Notes copy, PDF print, and calendar export.
 
 This public repository is intentionally marked `noindex`; the access code only discourages casual viewing.
+
+## Live URL
+
+https://cdn.statically.io/gh/k2Kazim/k2kai-portal@main/docs/index.html
+
+Family access code: `2026`

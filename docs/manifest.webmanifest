@@ -2,7 +2,7 @@
   "name": "K2Fam Family Trip 2026 — Verified Access",
   "short_name": "K2Fam Trip",
   "description": "Verified-access Al Bahah, Red Sea and Riyadh family trip command centre.",
-  "start_url": "./",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
