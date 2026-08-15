@@ -12,6 +12,6 @@ This public repository is intentionally marked `noindex`; the access code only d
 
 ## Live URL
 
-https://cdn.statically.io/gh/k2Kazim/k2kai-portal@main/docs/index.html
+https://k2kazim.github.io/k2kai-portal/
 
 Family access code: `2026`
