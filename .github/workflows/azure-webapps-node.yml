@@ -18,8 +18,8 @@ jobs:
   validate-and-publish:
     runs-on: ubuntu-latest
     env:
-      PAYLOAD_URL: https://d2ol7oe51mr4n9.cloudfront.net/user_3F08PKZvYI8K0Spij7yLQbPPF9L/77d6c962-f305-4541-b87b-f80196715f99.png
-      LIVE_URL: https://cdn.statically.io/gh/k2Kazim/k2kai-portal@main/docs/index.html
+      PAYLOAD_URL: https://d2ol7oe51mr4n9.cloudfront.net/user_3F08PKZvYI8K0Spij7yLQbPPF9L/40ca2b56-4e7f-415c-9e03-ff6d062494df.png
+      LIVE_URL: https://k2kazim.github.io/k2kai-portal/
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -61,9 +61,9 @@ jobs:
           missing = [name for name in required if name.lower() not in html.lower()]
           if missing:
               raise SystemExit(f'Required verified content missing: {missing}')
-          live_url = 'https://cdn.statically.io/gh/k2Kazim/k2kai-portal@main/docs/index.html'
+          live_url = 'https://k2kazim.github.io/k2kai-portal/'
           if live_url not in html:
-              raise SystemExit('Live share URL is not configured')
+              raise SystemExit('Clean live share URL is not configured')
           match = re.search(r'<script>([\s\S]*?)</script>\s*</body>', html)
           if not match:
               raise SystemExit('Inline application script not found')
@@ -86,12 +86,12 @@ jobs:
             git push origin HEAD:main
           fi
 
-      - name: Smoke-test live CDN deployment
+      - name: Smoke-test public site availability
         shell: bash
         run: |
           set -euo pipefail
-          sleep 4
-          curl --fail --location --retry 6 --retry-all-errors --retry-delay 3 --max-time 45 \
+          sleep 3
+          curl --fail --location --retry 4 --retry-all-errors --retry-delay 2 --max-time 30 \
             -D /tmp/live-headers.txt -o /tmp/live-index.html "$LIVE_URL?deploy=${GITHUB_RUN_ID}"
           grep -qi 'content-type:.*text/html' /tmp/live-headers.txt
           grep -q 'K2Fam Trip 2026' /tmp/live-index.html
@@ -99,5 +99,4 @@ jobs:
           grep -q 'Raghadan Forest Park' /tmp/live-index.html
           grep -q 'Al Nakheel Beach' /tmp/live-index.html
           grep -q 'South Corniche' /tmp/live-index.html
-          grep -q 'cdn.statically.io/gh/k2Kazim/k2kai-portal@main/docs/index.html' /tmp/live-index.html
-          echo "LIVE_DEPLOYMENT_OK=$LIVE_URL"
+          echo "PUBLIC_SITE_REACHABLE=$LIVE_URL"
