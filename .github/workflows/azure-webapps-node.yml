@@ -44,8 +44,16 @@ jobs:
           from pathlib import Path
           import re
           html = Path('docs/index.html').read_text(encoding='utf-8')
-          forbidden = ['Dhee Ayn', 'Khairah', 'Palm Beach', 'RUST', 'Fifth Season', 'Jazeera Saba', 'Sea Village']
-          found = [name for name in forbidden if name.lower() in html.lower()]
+          forbidden_patterns = {
+              'Dhee Ayn': r'Dhee\s+Ayn',
+              'Khairah': r'Khairah',
+              'Palm Beach': r'Palm\s+Beach',
+              'RUST restaurant': r'(?<![A-Za-z])RUST(?![A-Za-z])',
+              'Fifth Season': r'Fifth\s+Season',
+              'Jazeera Saba': r'Jazeera\s+Saba',
+              'Sea Village': r'Sea\s+Village',
+          }
+          found = [name for name, pattern in forbidden_patterns.items() if re.search(pattern, html, re.I)]
           if found:
               raise SystemExit(f'Unverified destinations remain: {found}')
           required = ['Prince Hussam Park', 'Raghadan Forest Park', 'Al Nakheel Beach', 'South Corniche', '2026']
