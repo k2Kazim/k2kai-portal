@@ -1,24 +1,24 @@
-name: Deploy verified K2Fam Trip
+name: Publish verified K2Fam Trip
 
 on:
   push:
     branches: [main]
+    paths:
+      - '.github/workflows/azure-webapps-node.yml'
   workflow_dispatch:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
-  group: k2fam-trip-deploy
+  group: k2fam-trip-publish
   cancel-in-progress: true
 
 jobs:
-  build-and-publish:
+  validate-and-publish:
     runs-on: ubuntu-latest
     env:
-      PAYLOAD_URL: https://d2ol7oe51mr4n9.cloudfront.net/user_3F08PKZvYI8K0Spij7yLQbPPF9L/c11b1d02-820f-46a6-8a5a-ae4dbae770f2.png
+      PAYLOAD_URL: https://d2ol7oe51mr4n9.cloudfront.net/user_3F08PKZvYI8K0Spij7yLQbPPF9L/77d6c962-f305-4541-b87b-f80196715f99.png
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -36,7 +36,7 @@ jobs:
           test -s docs/sw.js
           touch docs/.nojekyll
 
-      - name: Validate itinerary and JavaScript
+      - name: Validate verified-only itinerary and JavaScript
         shell: bash
         run: |
           set -euo pipefail
@@ -60,12 +60,16 @@ jobs:
           missing = [name for name in required if name.lower() not in html.lower()]
           if missing:
               raise SystemExit(f'Required verified content missing: {missing}')
+          live_url = 'https://cdn.statically.io/gh/k2Kazim/k2kai-portal@main/docs/index.html'
+          if live_url not in html:
+              raise SystemExit('Live share URL is not configured')
           match = re.search(r'<script>([\s\S]*?)</script>\s*</body>', html)
           if not match:
               raise SystemExit('Inline application script not found')
           Path('/tmp/k2fam-app.js').write_text(match.group(1), encoding='utf-8')
           PY
           node --check /tmp/k2fam-app.js
+          node --check docs/sw.js
 
       - name: Publish app source to main/docs
         shell: bash
@@ -77,40 +81,12 @@ jobs:
           if git diff --cached --quiet; then
             echo "No source update required."
           else
-            git commit -m "Deploy verified K2Fam Trip app [skip ci]"
+            git commit -m "Publish verified K2Fam Trip app [skip ci]"
             git push origin HEAD:main
           fi
 
-      - name: Try to enable branch-based GitHub Pages
-        id: enable_pages
-        continue-on-error: true
+      - name: Confirm published entry file
         shell: bash
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
-          set +e
-          response=/tmp/pages-response.json
-          code=$(curl -sS -o "$response" -w "%{http_code}" \
-            -X POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer $GH_TOKEN" \
-            -H "X-GitHub-Api-Version: 2026-03-10" \
-            "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages" \
-            -d '{"source":{"branch":"main","path":"/docs"}}')
-          echo "Pages enablement response: HTTP $code"
-          cat "$response" || true
-          if [ "$code" = "201" ] || [ "$code" = "204" ] || [ "$code" = "409" ]; then
-            exit 0
-          fi
-          exit 1
-
-      - name: Prepare Pages artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: docs
-          include-hidden-files: true
-
-      - name: Deploy with GitHub Pages Actions when available
-        id: deployment
-        continue-on-error: true
-        uses: actions/deploy-pages@v4
+          test -s docs/index.html
+          echo "Live CDN URL: https://cdn.statically.io/gh/k2Kazim/k2kai-portal@main/docs/index.html"
