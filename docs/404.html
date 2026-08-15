@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#07111f" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="K2Fam Trip" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="description" content="Verified-only K2Fam 2026 family trip command centre for Al Bahah, Al Qunfudhah and Riyadh." />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <meta property="og:title" content="K2Fam Family Trip 2026" />
+  <meta property="og:description" content="Verified public-access route · Al Bahah → Red Sea → Riyadh · 13 family members · 2 cars · 6 days" />
+  <meta property="og:image" content="./og-cover.jpg" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+  <link rel="icon" href="./icon-192.png" />
+  <title>K2Fam Trip 2026</title>
+  <style>
+    :root{
+      color-scheme:dark;
+      --bg:#050a12;
+      --bg-soft:#07111f;
+      --surface:#0b1523;
+      --surface-2:#101e30;
+      --surface-3:#15283c;
+      --surface-4:#1b3046;
+      --text:#f7f9fb;
+      --muted:#a7b7c9;
+      --muted-2:#8195ab;
+      --line:rgba(255,255,255,.09);
+      --line-strong:rgba(255,255,255,.15);
+      --gold:#e6c77e;
+      --gold-2:#f3dda6;
+      --teal:#4bd8c8;
+      --teal-dark:#123f42;
+      --blue:#79a0ff;
+      --green:#68d89e;
+      --amber:#f0ad67;
+      --red:#ff8585;
+      --purple:#a78bfa;
+      --shadow:0 20px 60px rgba(0,0,0,.32);
+      --radius-xl:30px;
+      --radius-lg:22px;
+      --radius-md:16px;
+      --radius-sm:12px;
+      --safe-top:env(safe-area-inset-top,0px);
+      --safe-bottom:env(safe-area-inset-bottom,0px);
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html{background:var(--bg);scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 12% -8%,rgba(54,118,145,.22),transparent 34%),
+        radial-gradient(circle at 90% 4%,rgba(99,72,155,.15),transparent 26%),
+        linear-gradient(180deg,#07111f 0%,#050a12 46%,#050a12 100%);
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Noto Sans Bengali","Helvetica Neue",Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+      overflow-x:hidden;
+    }
+    button,input,select,textarea{font:inherit}
+    button,a{touch-action:manipulation}
+    button{color:inherit}
+    a{color:inherit;text-decoration:none}
+    :focus-visible{outline:3px solid rgba(75,216,200,.72);outline-offset:3px}
+    .app{min-height:100vh}
+    .topbar{
+      position:sticky;top:0;z-index:40;
+      padding:calc(var(--safe-top) + 10px) 16px 10px;
+      background:linear-gradient(180deg,rgba(5,10,18,.96),rgba(5,10,18,.74) 80%,transparent);
+      backdrop-filter:blur(18px) saturate(1.2);
+      -webkit-backdrop-filter:blur(18px) saturate(1.2);
+    }
+    .topbar-inner{max-width:var(--max);margin:auto;display:flex;align-items:center;gap:12px;min-height:54px}
+    .brand-lockup{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
+    .brand-mark{
+      width:42px;height:42px;border-radius:14px;display:grid;place-items:center;flex:0 0 auto;
+      color:#06121c;font-size:14px;font-weight:900;letter-spacing:-.04em;
+      background:linear-gradient(145deg,var(--gold-2),var(--gold) 52%,#c9a85b);
+      box-shadow:0 8px 26px rgba(230,199,126,.17),inset 0 1px rgba(255,255,255,.75);
+    }
+    .brand-copy{min-width:0}
+    .brand-copy strong{display:block;font-size:15px;line-height:1.1;letter-spacing:-.02em}
+    .brand-copy span{display:block;color:var(--muted);font-size:11px;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .top-actions{display:flex;align-items:center;gap:8px}
+    .icon-btn,.lang-btn{
+      min-width:44px;height:44px;border:1px solid var(--line);background:rgba(15,29,45,.82);border-radius:14px;
+      display:inline-grid;place-items:center;cursor:pointer;box-shadow:inset 0 1px rgba(255,255,255,.04);
+    }
+    .lang-btn{padding:0 12px;font-size:12px;font-weight:800;letter-spacing:.04em}
+    .main{max-width:var(--max);margin:0 auto;padding:8px 14px calc(104px + var(--safe-bottom))}
+    .screen{animation:screenIn .32s cubic-bezier(.2,.8,.2,1)}
+    @keyframes screenIn{from{opacity:.35;transform:translateY(7px)}to{opacity:1;transform:none}}
+    .hero{
+      position:relative;overflow:hidden;min-height:330px;border-radius:var(--radius-xl);padding:24px 20px 20px;
+      border:1px solid rgba(230,199,126,.24);
+      background:
+        radial-gradient(circle at 81% 18%,rgba(239,205,122,.38) 0 3%,rgba(239,205,122,.12) 4%,transparent 16%),
+        radial-gradient(circle at 23% 4%,rgba(65,122,177,.26),transparent 35%),
+        linear-gradient(145deg,#0b1d31 0%,#091827 47%,#0a2530 100%);
+      box-shadow:var(--shadow),inset 0 1px rgba(255,255,255,.06);
+    }
+    .hero:before{
+      content:"";position:absolute;inset:0;opacity:.7;pointer-events:none;
+      background-image:
+        radial-gradient(circle at 12% 19%,rgba(255,255,255,.78) 0 1px,transparent 1.5px),
+        radial-gradient(circle at 34% 12%,rgba(255,255,255,.55) 0 1px,transparent 1.3px),
+        radial-gradient(circle at 61% 24%,rgba(255,255,255,.45) 0 1px,transparent 1.3px),
+        radial-gradient(circle at 87% 7%,rgba(255,255,255,.75) 0 1px,transparent 1.5px),
+        radial-gradient(circle at 72% 33%,rgba(255,255,255,.3) 0 1px,transparent 1.3px);
+    }
+    .hero-art{position:absolute;inset:auto -7% -2px -7%;height:150px;opacity:.72;pointer-events:none}
+    .hero-content{position:relative;z-index:2;display:flex;flex-direction:column;min-height:285px}
+    .route-label{display:flex;align-items:center;gap:8px;color:var(--gold-2);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+    .route-label:before{content:"";width:28px;height:1px;background:var(--gold)}
+    .hero h1{font-size:clamp(31px,8.5vw,53px);line-height:.98;letter-spacing:-.055em;margin:15px 0 10px;max-width:760px}
+    .hero-sub{font-size:14px;color:#b9c7d7;line-height:1.5;max-width:620px;margin:0}
+    .hero-bottom{margin-top:auto;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(120px,.7fr);gap:10px;align-items:stretch}
+    .next-panel,.progress-panel{
+      min-height:94px;border-radius:18px;border:1px solid rgba(255,255,255,.10);background:rgba(5,14,25,.56);
+      backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:14px;
+    }
+    .micro{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.11em;color:var(--muted);font-weight:800}
+    .next-panel strong{display:block;font-size:16px;line-height:1.25;margin-top:6px}
+    .next-panel p{font-size:11px;color:var(--muted);margin:5px 0 0;line-height:1.35}
+    .progress-panel{display:flex;align-items:center;justify-content:center;gap:11px;text-align:left}
+    .ring{--p:33;position:relative;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--teal) calc(var(--p)*1%),rgba(255,255,255,.09) 0);flex:0 0 auto}
+    .ring:after{content:"";position:absolute;inset:6px;border-radius:50%;background:#0b1726}
+    .ring strong{position:relative;z-index:1;font-size:13px}
+    .progress-copy b{display:block;font-size:15px}.progress-copy span{color:var(--muted);font-size:10px}
+    .status-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 18px}
+    .status-item{min-width:0;padding:12px 12px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(10,20,32,.48)}
+    .status-item:first-child{border-radius:15px 0 0 15px;border-left:1px solid var(--line)}
+    .status-item:last-child{border-radius:0 15px 15px 0;border-right:1px solid var(--line)}
+    .status-item span{display:block;color:var(--muted);font-size:10px;margin-bottom:4px}.status-item strong{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .section{margin:22px 0}
+    .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:0 3px 12px}
+    .section-head h2{margin:0;font-size:21px;letter-spacing:-.035em}.section-head p{margin:4px 0 0;color:var(--muted);font-size:12px}.section-link{border:0;background:none;color:var(--teal);font-size:12px;font-weight:750;padding:8px;cursor:pointer}
+    .quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+    .quick-action{
+      min-height:88px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(17,31,48,.96),rgba(10,20,33,.96));
+      border-radius:18px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;text-align:center;
+      box-shadow:inset 0 1px rgba(255,255,255,.035);
+    }
+    .quick-action .qicon{width:38px;height:38px;border-radius:13px;display:grid;place-items:center;background:rgba(75,216,200,.10);color:var(--teal)}
+    .quick-action:nth-child(2) .qicon{background:rgba(230,199,126,.11);color:var(--gold)}
+    .quick-action:nth-child(3) .qicon{background:rgba(121,160,255,.11);color:var(--blue)}
+    .quick-action:nth-child(4) .qicon{background:rgba(167,139,250,.12);color:var(--purple)}
+    .quick-action strong{font-size:11px;line-height:1.2}
+    .panel{border:1px solid var(--line);background:linear-gradient(180deg,rgba(15,29,46,.92),rgba(8,17,29,.92));border-radius:var(--radius-lg);overflow:hidden;box-shadow:inset 0 1px rgba(255,255,255,.03)}
+    .panel-pad{padding:16px}
+    .timeline{position:relative;padding:5px 0}
+    .timeline:before{content:"";position:absolute;left:66px;top:18px;bottom:18px;width:1px;background:linear-gradient(var(--gold),rgba(255,255,255,.08))}
+    .timeline-item{position:relative;display:grid;grid-template-columns:50px 1fr;gap:20px;padding:11px 13px}
+    .timeline-time{font-size:11px;color:var(--gold-2);font-weight:750;padding-top:2px;text-align:left}
+    .timeline-dot{position:absolute;left:62px;top:17px;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px #0c1928}
+    .timeline-content{padding-left:3px;min-width:0}
+    .timeline-content strong{font-size:14px;line-height:1.35;display:block}.timeline-content p{margin:4px 0 0;color:var(--muted);font-size:11px;line-height:1.45}
+    .timeline-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
+    .timeline-item.done{opacity:.55}.timeline-item.done .timeline-content strong{text-decoration:line-through}.timeline-item.done .timeline-dot{background:var(--green)}
+    .weather-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .weather-card{position:relative;overflow:hidden;min-height:132px;border-radius:21px;padding:16px;border:1px solid var(--line);background:linear-gradient(140deg,#15283b,#0d1a2a)}
+    .weather-card.coast{background:linear-gradient(140deg,#123342,#0a1f2d)}
+    .weather-card h3{margin:0;font-size:14px}.weather-card .temp{font-size:32px;font-weight:800;letter-spacing:-.05em;margin:12px 0 2px}.weather-card p{margin:0;color:var(--muted);font-size:10px;line-height:1.5}.weather-icon{position:absolute;right:14px;top:14px;color:var(--gold)}
+    .day-strip{display:flex;gap:8px;overflow:auto;padding:2px 2px 8px;scrollbar-width:none;overscroll-behavior-inline:contain}.day-strip::-webkit-scrollbar{display:none}
+    .day-chip{min-width:86px;border:1px solid var(--line);background:rgba(12,24,38,.85);border-radius:16px;padding:11px 12px;text-align:left;cursor:pointer}
+    .day-chip span{display:block;font-size:10px;color:var(--muted)}.day-chip strong{display:block;font-size:13px;margin-top:3px}.day-chip.active{border-color:rgba(230,199,126,.68);background:linear-gradient(160deg,rgba(230,199,126,.16),rgba(14,29,44,.95));box-shadow:0 8px 28px rgba(0,0,0,.22)}.day-chip.today:after{content:"";display:block;width:5px;height:5px;border-radius:50%;background:var(--teal);margin-top:7px}
+    .day-hero{display:grid;gap:12px;padding:18px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,#122338,#0b1727);margin:7px 0 12px}.day-hero h2{font-size:25px;line-height:1.08;letter-spacing:-.04em;margin:0}.day-meta{display:flex;flex-wrap:wrap;gap:8px}.tag{display:inline-flex;align-items:center;gap:5px;padding:7px 9px;border-radius:999px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.06);color:#c6d2df;font-size:10px}.tag.gold{color:var(--gold-2);background:rgba(230,199,126,.09)}.tag.teal{color:var(--teal);background:rgba(75,216,200,.08)}
+    .activity-list{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:rgba(9,18,29,.76)}
+    .activity{display:grid;grid-template-columns:42px 1fr auto;gap:10px;padding:14px;border-bottom:1px solid var(--line);align-items:start}.activity:last-child{border-bottom:0}.activity .time{font-size:11px;color:var(--gold-2);font-weight:800}.activity .copy strong{font-size:14px;line-height:1.35;display:block}.activity .copy p{font-size:11px;line-height:1.5;color:var(--muted);margin:4px 0 0}.check-btn{width:34px;height:34px;border-radius:11px;border:1px solid var(--line-strong);background:#0b1726;display:grid;place-items:center;cursor:pointer;color:transparent}.activity.done{opacity:.56}.activity.done .copy strong{text-decoration:line-through}.activity.done .check-btn{background:rgba(104,216,158,.16);border-color:rgba(104,216,158,.48);color:var(--green)}
+    .filters{display:flex;gap:8px;overflow:auto;padding:2px 2px 10px;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}.filter-btn{border:1px solid var(--line);background:rgba(12,24,38,.86);border-radius:999px;padding:9px 13px;font-size:11px;white-space:nowrap;cursor:pointer}.filter-btn.active{background:var(--text);color:#08111e;border-color:var(--text);font-weight:800}
+    .place-list,.hotel-list{display:grid;gap:10px}
+    .place-card,.hotel-card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(15,29,46,.95),rgba(8,17,29,.94));border-radius:22px;padding:16px}
+    .place-top,.hotel-top{display:flex;align-items:flex-start;gap:12px}.place-icon,.hotel-icon{width:45px;height:45px;border-radius:15px;display:grid;place-items:center;background:rgba(75,216,200,.09);color:var(--teal);flex:0 0 auto}.place-copy,.hotel-copy{min-width:0;flex:1}.place-copy h3,.hotel-copy h3{font-size:16px;line-height:1.25;margin:1px 0 3px}.place-copy p,.hotel-copy p{font-size:11px;line-height:1.45;color:var(--muted);margin:0}.place-meta{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.button-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .btn{min-height:44px;border-radius:14px;border:1px solid var(--line);background:#122236;color:var(--text);padding:10px 13px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:12px;font-weight:760;cursor:pointer}.btn.primary{background:linear-gradient(135deg,#57dfd0,#37b9b2);border-color:transparent;color:#041418}.btn.gold{background:linear-gradient(135deg,#f0d89f,#d7b866);border-color:transparent;color:#171005}.btn.blue{background:linear-gradient(135deg,#7da5ff,#5e7fe6);border-color:transparent;color:#07101f}.btn.ghost{background:transparent}.btn.danger{color:#ffabab;border-color:rgba(255,133,133,.28);background:rgba(255,133,133,.07)}.btn.small{min-height:34px;border-radius:11px;padding:7px 10px;font-size:10px}.btn.wide{width:100%}.btn:disabled{opacity:.45;cursor:not-allowed}
+    .hotel-card.selected{border-color:rgba(230,199,126,.7);box-shadow:0 0 0 1px rgba(230,199,126,.18),0 18px 48px rgba(0,0,0,.25)}
+    .recommend{color:var(--gold-2);font-size:9px;text-transform:uppercase;letter-spacing:.1em;font-weight:900;margin-bottom:5px}
+    .quote-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:14px}.field label{display:block;color:var(--muted);font-size:10px;margin:0 0 6px}.field input,.field select,.field textarea{width:100%;min-height:44px;border-radius:13px;border:1px solid var(--line);background:#081522;color:var(--text);padding:10px 11px;outline:none}.field textarea{min-height:90px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(75,216,200,.62);box-shadow:0 0 0 3px rgba(75,216,200,.08)}
+    .quote-total{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}.quote-total span{color:var(--muted);font-size:10px}.quote-total strong{font-size:18px;color:var(--gold-2)}
+    .budget-panel{padding:17px;border:1px solid rgba(230,199,126,.25);border-radius:22px;background:linear-gradient(145deg,rgba(67,52,24,.28),rgba(12,23,36,.95));margin-bottom:12px}.budget-line{display:flex;justify-content:space-between;gap:12px;align-items:flex-end}.budget-line strong{font-size:28px;letter-spacing:-.045em}.budget-line>div>span,.budget-line>div>strong{display:block}.budget-line span{font-size:11px;color:var(--muted)}.budget-bar{height:7px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:13px}.budget-bar i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--teal),var(--gold));width:0}
+    .segmented{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;padding:5px;border-radius:17px;border:1px solid var(--line);background:#08131f;margin-bottom:13px}.segmented button{min-height:39px;border:0;border-radius:12px;background:transparent;color:var(--muted);font-size:10px;font-weight:800;cursor:pointer}.segmented button.active{background:#17283a;color:var(--text);box-shadow:inset 0 1px rgba(255,255,255,.06)}
+    .member-list{border:1px solid var(--line);border-radius:21px;overflow:hidden;background:rgba(9,18,29,.72)}
+    .member-row{display:grid;grid-template-columns:40px 1fr 86px;gap:10px;align-items:center;padding:11px 12px;border-bottom:1px solid var(--line)}.member-row:last-child{border-bottom:0}.avatar{width:37px;height:37px;border-radius:13px;display:grid;place-items:center;font-size:12px;font-weight:850;background:linear-gradient(145deg,#203b4a,#102132);color:var(--teal)}.member-copy strong{display:block;font-size:13px}.member-copy span{display:block;color:var(--muted);font-size:9px;margin-top:3px}.member-control{display:flex;align-items:center;justify-content:flex-end;gap:7px}.present-toggle{width:28px;height:28px;border-radius:9px;border:1px solid var(--line);background:#0a1725;color:transparent;display:grid;place-items:center;cursor:pointer}.present-toggle.on{color:#07170e;background:var(--green);border-color:var(--green)}.car-select{width:50px;min-height:34px;border-radius:10px;border:1px solid var(--line);background:#0a1725;color:var(--text);font-size:10px;padding:5px}
+    .car-summary{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px}.car-card{border:1px solid var(--line);border-radius:18px;padding:14px;background:#0d1b2b}.car-card span{font-size:10px;color:var(--muted)}.car-card strong{display:block;font-size:21px;margin-top:5px}
+    .checklist-group{border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-bottom:10px;background:rgba(9,18,29,.72)}.checklist-title{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;border-bottom:1px solid var(--line)}.checklist-title strong{font-size:14px}.checklist-title span{font-size:10px;color:var(--muted)}.check-item{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.055);cursor:pointer}.check-item:last-child{border-bottom:0}.box{width:22px;height:22px;border-radius:7px;border:1px solid var(--line-strong);background:#0b1726;display:grid;place-items:center;color:transparent;flex:0 0 auto}.check-item.done .box{background:var(--green);border-color:var(--green);color:#052015}.check-item.done span{text-decoration:line-through;opacity:.58}.check-item span{font-size:12px;line-height:1.45}
+    .option-list{display:grid;gap:9px}.option-card{position:relative;border:1px solid var(--line);border-radius:20px;padding:15px;background:#0d1a2a;cursor:pointer}.option-card.selected{border-color:rgba(75,216,200,.64);background:linear-gradient(145deg,rgba(27,73,76,.46),#0c1a29)}.option-card h3{font-size:15px;margin:0 0 6px}.option-card p{font-size:11px;line-height:1.5;color:var(--muted);margin:0;padding-right:28px}.option-radio{position:absolute;right:14px;top:15px;width:20px;height:20px;border-radius:50%;border:2px solid var(--muted-2)}.option-card.selected .option-radio{border-color:var(--teal);box-shadow:inset 0 0 0 4px #0c1a29;background:var(--teal)}
+    .notice{display:flex;gap:11px;align-items:flex-start;padding:13px;border-radius:17px;border:1px solid rgba(240,173,103,.23);background:rgba(240,173,103,.07);color:#f2d5b1;font-size:11px;line-height:1.55}.notice.teal{border-color:rgba(75,216,200,.24);background:rgba(75,216,200,.07);color:#b8ebe5}.notice.red{border-color:rgba(255,133,133,.23);background:rgba(255,133,133,.07);color:#ffc1c1}
+    .bottom-nav{
+      position:fixed;z-index:50;left:50%;transform:translateX(-50%);bottom:0;width:min(720px,100%);
+      display:grid;grid-template-columns:repeat(5,1fr);gap:2px;padding:8px 10px calc(8px + var(--safe-bottom));
+      background:rgba(7,15,25,.92);border-top:1px solid var(--line);backdrop-filter:blur(22px) saturate(1.2);-webkit-backdrop-filter:blur(22px) saturate(1.2);
+      box-shadow:0 -18px 50px rgba(0,0,0,.24);
+    }
+    .nav-btn{min-height:58px;border:0;border-radius:16px;background:transparent;color:var(--muted);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:9px;font-weight:760;cursor:pointer}.nav-btn.active{color:var(--gold-2);background:rgba(230,199,126,.08)}.nav-btn svg{width:20px;height:20px}
+    .sheet-wrap{position:fixed;inset:0;z-index:90;display:flex;align-items:flex-end;justify-content:center;padding:12px;background:rgba(0,0,0,.56);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}.sheet-wrap[hidden]{display:none}.sheet{width:min(620px,100%);max-height:min(82vh,760px);overflow:auto;color:#f7f9fb;border:1px solid var(--line-strong);border-radius:28px 28px 22px 22px;background:linear-gradient(180deg,#122238,#07121f);box-shadow:0 30px 90px rgba(0,0,0,.55);padding:8px 16px calc(17px + var(--safe-bottom));animation:sheetIn .28s cubic-bezier(.2,.8,.2,1)}@keyframes sheetIn{from{transform:translateY(28px);opacity:.5}to{transform:none;opacity:1}}.sheet-handle{width:42px;height:4px;border-radius:99px;background:rgba(255,255,255,.2);margin:4px auto 12px}.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.sheet-head h2{font-size:19px;margin:0}.sheet-close{width:40px;height:40px;border-radius:13px;border:1px solid var(--line);background:#0c1a2a;display:grid;place-items:center;cursor:pointer}.share-list{display:grid;gap:9px}.share-option{border:1px solid var(--line);background:#0c1a2a;border-radius:18px;min-height:62px;padding:12px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left}.share-option .share-icon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:rgba(75,216,200,.1);color:var(--teal)}.share-option strong{font-size:14px;display:block;color:#f7f9fb}.share-option span{font-size:10px;color:#a7b7c9;display:block;margin-top:3px}
+    .toast{position:fixed;z-index:120;left:50%;bottom:calc(86px + var(--safe-bottom));transform:translate(-50%,14px);max-width:calc(100% - 28px);padding:11px 15px;border-radius:14px;border:1px solid var(--line-strong);background:#102235;color:var(--text);box-shadow:var(--shadow);font-size:11px;opacity:0;pointer-events:none;transition:.22s}.toast.show{opacity:1;transform:translate(-50%,0)}
+    .empty{padding:30px 18px;text-align:center;color:var(--muted);font-size:12px;border:1px dashed var(--line-strong);border-radius:20px}.divider{height:1px;background:var(--line);margin:14px 0}.muted{color:var(--muted)}.small{font-size:10px}.sp8{height:8px}.sp12{height:12px}.sp16{height:16px}
+    .print-root{display:none}
+    @media(min-width:680px){
+      .timeline:before{left:77px}.timeline-dot{left:73px}.timeline-item{grid-template-columns:60px 1fr;gap:22px}
+      .main{padding-left:22px;padding-right:22px}.hero{padding:30px;min-height:360px}.hero-bottom{grid-template-columns:1.8fr .7fr}.quick-grid{grid-template-columns:repeat(6,1fr)}.quick-action{min-height:96px}.weather-grid{grid-template-columns:repeat(2,1fr)}.place-list,.hotel-list{grid-template-columns:1fr 1fr}.hotel-list .hotel-card:first-child{grid-column:span 2}.quote-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.status-rail{gap:10px}.status-item{border:1px solid var(--line)!important;border-radius:15px!important}.activity{grid-template-columns:55px 1fr auto}.timeline-item{grid-template-columns:60px 1fr}.timeline:before{left:30px}.timeline-dot{left:26px}.segmented{max-width:560px}.member-list{display:grid;grid-template-columns:1fr 1fr}.member-row:nth-child(odd){border-right:1px solid var(--line)}.member-row:last-child{border-bottom:1px solid var(--line)}
+    }
+    @media(min-width:980px){
+      .main{padding-bottom:125px}.home-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(360px,.75fr);gap:18px;align-items:start}.home-secondary{position:sticky;top:84px}.hero{min-height:392px}.weather-grid{grid-template-columns:1fr 1fr}.bottom-nav{bottom:18px;border:1px solid var(--line);border-radius:24px;padding:7px 10px;box-shadow:0 24px 70px rgba(0,0,0,.45)}
+    }
+    @media(max-width:390px){
+      .main{padding-left:10px;padding-right:10px}.topbar{padding-left:10px;padding-right:10px}.brand-copy span{max-width:170px}.hero{padding:21px 17px 18px}.hero-bottom{grid-template-columns:1fr}.progress-panel{justify-content:flex-start}.status-item{padding:10px 8px}.status-item strong{font-size:11px}.quick-action{min-height:82px}.quick-action strong{font-size:10px}.section-head h2{font-size:19px}.segmented{grid-template-columns:repeat(2,1fr)}.member-row{grid-template-columns:36px 1fr 80px}.quote-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}}
+    @media print{
+      :root{color-scheme:light}.topbar,.bottom-nav,.sheet-wrap,.toast,.main{display:none!important}.print-root{display:block!important;color:#101010;background:#fff;padding:14mm;font-family:Arial,"Noto Sans Bengali",sans-serif}.print-root h1{font-size:24pt;margin:0 0 4mm}.print-root h2{font-size:15pt;margin:7mm 0 2mm}.print-root p,.print-root li,.print-root td,.print-root th{font-size:10pt;line-height:1.5}.print-grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm}.print-card{border:1px solid #bbb;border-radius:3mm;padding:4mm;break-inside:avoid}.print-day{break-inside:avoid;margin-bottom:5mm}.print-day table{width:100%;border-collapse:collapse}.print-day td{padding:2mm;border-bottom:1px solid #ddd;vertical-align:top}.print-day td:first-child{width:20mm;font-weight:bold}.print-note{border-left:3px solid #333;padding-left:3mm}.print-footer{margin-top:8mm;border-top:1px solid #aaa;padding-top:3mm;color:#444}
+    }
+
+    .trust-strip{display:flex;align-items:flex-start;gap:10px;margin:12px 0 18px;padding:13px 14px;border-radius:17px;border:1px solid rgba(104,216,158,.28);background:linear-gradient(145deg,rgba(19,67,52,.54),rgba(8,25,29,.76));color:#d9ffea}
+    .trust-strip svg{flex:0 0 auto;margin-top:1px}.trust-strip strong{display:block;font-size:13px}.trust-strip span{display:block;color:#a9d9bf;font-size:10px;line-height:1.5;margin-top:3px}
+    .verified-badge{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border-radius:999px;background:rgba(104,216,158,.13);border:1px solid rgba(104,216,158,.25);color:#a9f0c7;font-size:9px;font-weight:850;letter-spacing:.02em}
+    .source-btn{color:var(--blue)!important}
+    .access-gate{position:fixed;inset:0;z-index:300;display:grid;grid-template-columns:minmax(0,1fr);place-items:center;padding:20px;max-width:100vw;overflow:hidden;background:radial-gradient(circle at 25% 0%,#16344d 0,transparent 38%),linear-gradient(180deg,#07111f,#04080e);color:var(--text)}
+    .access-gate[hidden]{display:none}.gate-card{width:100%;max-width:420px;min-width:0;overflow:hidden;padding:28px 22px;border-radius:28px;border:1px solid rgba(230,199,126,.28);background:linear-gradient(180deg,rgba(17,31,49,.98),rgba(7,15,25,.98));box-shadow:0 30px 100px rgba(0,0,0,.55);text-align:center}
+    .gate-mark{width:64px;height:64px;margin:0 auto 18px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(145deg,var(--gold-2),var(--gold));color:#08111c;font-weight:950;font-size:20px}
+    .gate-card h1{font-size:29px;line-height:1.05;margin:0 0 8px;letter-spacing:-.04em}.gate-card p{color:var(--muted);font-size:12px;line-height:1.55;margin:0 0 18px;overflow-wrap:anywhere}
+    .gate-field{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;min-width:0}.gate-field input{min-width:0;flex:1;height:50px;border-radius:15px;border:1px solid var(--line-strong);background:#081522;color:#fff;padding:0 15px;text-align:center;letter-spacing:.18em;font-weight:850;font-size:18px}.gate-field button{height:50px;border:0;border-radius:15px;background:var(--teal);color:#041615;padding:0 18px;font-weight:900;cursor:pointer}.gate-error{min-height:20px;margin-top:10px;color:#ffb3b3;font-size:11px}
+
+  </style>
+</head>
+<body>
+  <section class="access-gate" id="accessGate">
+    <div class="gate-card">
+      <div class="gate-mark">K2</div>
+      <h1>Family Trip 2026</h1>
+      <p>Private family itinerary · Al Bahah → Red Sea → Riyadh<br>Enter the family access code.</p>
+      <form class="gate-field" id="gateForm">
+        <input id="gateCode" type="password" inputmode="numeric" autocomplete="one-time-code" maxlength="6" aria-label="Family access code" placeholder="••••" />
+        <button type="submit">Open</button>
+      </form>
+      <div class="gate-error" id="gateError"></div>
+    </div>
+  </section>
+  <div class="app" id="app">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true">K2</div>
+          <div class="brand-copy"><strong>K2Fam Trip</strong><span id="brandSub">Al Bahah → Red Sea → Riyadh · 2026</span></div>
+        </div>
+        <div class="top-actions">
+          <button class="lang-btn" type="button" data-action="language" aria-label="Change language">EN</button>
+          <button class="icon-btn" type="button" data-action="share-sheet" aria-label="Share trip" id="shareTop"></button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main" id="main" tabindex="-1"></main>
+
+    <nav class="bottom-nav" id="bottomNav" aria-label="Primary navigation"></nav>
+
+    <div class="sheet-wrap" id="sheetWrap" hidden>
+      <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+        <div class="sheet-handle"></div>
+        <div class="sheet-head"><h2 id="sheetTitle">Share</h2><button class="sheet-close" type="button" data-action="close-sheet" aria-label="Close"></button></div>
+        <div id="sheetBody"></div>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <input id="importFile" type="file" accept="application/json,.json" hidden />
+    <section class="print-root" id="printRoot"></section>
+  </div>
+
+  <script>
+  (()=>{
+    "use strict";
+
+    const PUBLIC_URL="https://k2kazim.github.io/k2kai-portal/";
+    const CURRENT_HOTEL="https://maps.app.goo.gl/og5Fo44NoizX5Dwd8?g_st=ic";
+    const HOTEL_COORD="20.0628511,41.5183857";
+    const BEACH_QUERY="Al Nakheel Beach Al Qunfudhah Saudi Arabia";
+    const BEACH_ROUTE=`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(HOTEL_COORD)}&destination=${encodeURIComponent(BEACH_QUERY)}&travelmode=driving`;
+    const RIYADH_ROUTE=`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent("Al Qunfudhah Saudi Arabia")}&destination=${encodeURIComponent("Riyadh Saudi Arabia")}&travelmode=driving`;
+    const ABT_ROUTE=`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent("Al Qunfudhah Saudi Arabia")}&destination=${encodeURIComponent("Al Baha Airport ABT Saudi Arabia")}&travelmode=driving`;
+    const APPLE_BEACH=`https://maps.apple.com/?saddr=${encodeURIComponent(HOTEL_COORD)}&daddr=${encodeURIComponent(BEACH_QUERY)}&dirflg=d`;
+
+    const I18N={
+      bn:{
+        home:"হোম",plan:"পরিকল্পনা",explore:"জায়গা",stay:"হোটেল",more:"আরও",
+        tripRoute:"আল-বাহা → লোহিত সাগর → রিয়াদ",tripTitle:"ফ্যামিলি ট্রিপ ২০২৬",tripSub:"১৩ জন · ২ গাড়ি · verified public-access ৬ দিনের command centre",
+        next:"পরবর্তী কাজ",day:"দিন",of:"এর মধ্যে",complete:"সম্পন্ন",travellers:"পরিবার",cars:"গাড়ি",hotel:"Beach hotel",notSelected:"নির্বাচিত নয়",
+        route:"রুট",whatsapp:"WhatsApp",headcount:"Headcount",notesPdf:"Notes / PDF",todayPlan:"আজকের পরিকল্পনা",viewAll:"সব দেখুন",
+        weather:"Live weather",weatherSub:"Open-Meteo · live conditions, cached fallback",loading:"লোড হচ্ছে…",unavailable:"এখন পাওয়া যাচ্ছে না",refresh:"Refresh",
+        planTitle:"৬ দিনের পরিকল্পনা",planSub:"সময়, জায়গা, route ও completion একই জায়গায়",openMaps:"Google Maps",appleMaps:"Apple Maps",markDone:"সম্পন্ন করুন",
+        exploreTitle:"জায়গা ও খাবার",exploreSub:"শুধু verified public access বা live search—random pin নয়",all:"সব",mountain:"আল-বাহা",sea:"সমুদ্র",food:"খাবার",routes:"Routes",
+        stayTitle:"Beach stay & budget",staySub:"১৩ জনের occupancy নিশ্চিত করে booking করুন",budgetTarget:"Budget target",selectedTotal:"Selected total",withinBudget:"Budget-এর মধ্যে",overBudget:"Budget-এর বেশি",noQuote:"Quote লিখুন",
+        selectHotel:"এই hotel নিন",selected:"নির্বাচিত",rooms:"Rooms / units",nightly:"প্রতি unit / রাত",nights:"রাত",fees:"Fees / tax",total:"Total",
+        moreTitle:"Family command",family:"Family",packing:"Packing",return:"Return",settings:"Settings",allPresent:"সব ১৩ জন present",clear:"Clear",
+        carA:"Car A",carB:"Car B",unassigned:"Unassigned",present:"Present",notChecked:"Headcount হয়নি",
+        directDrive:"দুই গাড়িতে সরাসরি Riyadh",splitFlight:"Family flight + drivers return cars",stopover:"নিরাপদ overnight stop",decisionNeeded:"Return decision",
+        shareTrip:"Trip share করুন",shareWhatsApp:"WhatsApp group-এ পাঠান",nativeShare:"iPhone Share Sheet",copyNotes:"Notes-এর জন্য copy",printPdf:"Print / Save PDF",copyLink:"App link copy",calendar:"Calendar file",
+        install:"iPhone-এ install",installText:"Safari → Share → Add to Home Screen. তখন app full-screen ও দ্রুত খুলবে।",export:"JSON backup",import:"Restore backup",reset:"Reset app",
+        hotelName:"বর্তমান Al Bahah hotel",roomNumber:"Room number",emergency:"Family emergency contact",budget:"Budget target (SAR)",saveAuto:"সব পরিবর্তন এই device-এ auto-save হয়।",
+        safety:"Safety first",safetyText:"শিশু ও বয়স্ক সদস্যের pace, heat, fog, mountain descent এবং sea current দেখে plan বদলান। দুই ঘণ্টা পরপর driver break নিন; ক্লান্ত হলে থামুন।",
+        currentLocation:"বর্তমান location share",useLocation:"আমার location তৈরি করুন",doneToast:"আপডেট হয়েছে",copied:"Clipboard-এ copy হয়েছে",shareCancelled:"Share বাতিল হয়েছে",
+        pdfHelp:"iPhone-এ Print preview খুললে preview-তে দুই আঙুল দিয়ে zoom করুন, তারপর Share → Save to Files।",
+        quoteNote:"Availability, ১৩ জনের legal occupancy, crib, parking, lift, cancellation এবং final tax hotel-এর সাথে নিশ্চিত করুন।",
+        today:"আজ",tomorrow:"আগামীকাল",tripEnded:"Trip সম্পন্ন",tripStarts:"Trip শুরু হবে",
+        addCalendar:"৬ দিনের .ics calendar download",profile:"Group profile image",profileText:"WhatsApp group-এর জন্য night Al Bahah / Red Sea artwork bundle-এ আছে।"
+      },
+      en:{
+        home:"Home",plan:"Plan",explore:"Explore",stay:"Stay",more:"More",
+        tripRoute:"Al Bahah → Red Sea → Riyadh",tripTitle:"Family Trip 2026",tripSub:"13 people · 2 cars · verified public-access 6-day command centre",
+        next:"Next up",day:"Day",of:"of",complete:"complete",travellers:"Family",cars:"Cars",hotel:"Beach hotel",notSelected:"Not selected",
+        route:"Route",whatsapp:"WhatsApp",headcount:"Headcount",notesPdf:"Notes / PDF",todayPlan:"Today’s plan",viewAll:"View all",
+        weather:"Live weather",weatherSub:"Open-Meteo · live conditions, cached fallback",loading:"Loading…",unavailable:"Unavailable",refresh:"Refresh",
+        planTitle:"Six-day plan",planSub:"Time, places, routes and completion in one view",openMaps:"Google Maps",appleMaps:"Apple Maps",markDone:"Mark done",
+        exploreTitle:"Places & food",exploreSub:"Verified public access or live search only—no random pins",all:"All",mountain:"Al Bahah",sea:"Red Sea",food:"Food",routes:"Routes",
+        stayTitle:"Beach stay & budget",staySub:"Confirm legal occupancy for all 13 guests before booking",budgetTarget:"Budget target",selectedTotal:"Selected total",withinBudget:"Within budget",overBudget:"Over budget",noQuote:"Enter a quote",
+        selectHotel:"Select hotel",selected:"Selected",rooms:"Rooms / units",nightly:"Per unit / night",nights:"Nights",fees:"Fees / tax",total:"Total",
+        moreTitle:"Family command",family:"Family",packing:"Packing",return:"Return",settings:"Settings",allPresent:"Mark all 13 present",clear:"Clear",
+        carA:"Car A",carB:"Car B",unassigned:"Unassigned",present:"Present",notChecked:"Headcount not done",
+        directDrive:"Drive both cars to Riyadh",splitFlight:"Family flies; drivers return cars",stopover:"Safe overnight stop",decisionNeeded:"Return decision",
+        shareTrip:"Share trip",shareWhatsApp:"Send to WhatsApp group",nativeShare:"iPhone Share Sheet",copyNotes:"Copy for Notes",printPdf:"Print / Save PDF",copyLink:"Copy app link",calendar:"Calendar file",
+        install:"Install on iPhone",installText:"Safari → Share → Add to Home Screen for a full-screen, faster app experience.",export:"JSON backup",import:"Restore backup",reset:"Reset app",
+        hotelName:"Current Al Bahah hotel",roomNumber:"Room number",emergency:"Family emergency contact",budget:"Budget target (SAR)",saveAuto:"Changes auto-save on this device.",
+        safety:"Safety first",safetyText:"Adjust the plan for children, older family members, heat, fog, mountain descent and sea currents. Drivers should stop at least every two hours and stop driving when tired.",
+        currentLocation:"Share current location",useLocation:"Create my location link",doneToast:"Updated",copied:"Copied to clipboard",shareCancelled:"Share cancelled",
+        pdfHelp:"On iPhone, open the Print preview, pinch out on the preview, then Share → Save to Files.",
+        quoteNote:"Confirm availability, legal occupancy for 13 guests, crib, parking, lift, cancellation and final taxes directly with the hotel.",
+        today:"Today",tomorrow:"Tomorrow",tripEnded:"Trip complete",tripStarts:"Trip starts",
+        addCalendar:"Download the six-day .ics calendar",profile:"Group profile image",profileText:"The night Al Bahah / Red Sea WhatsApp artwork is included in the bundle."
+      }
+    };
+
+    const MEMBERS=[
+      ["lead",{bn:"আমি / ট্রিপ লিড",en:"Me / Trip lead"},"Adult"],
+      ["wife",{bn:"আমার স্ত্রী",en:"My wife"},"Adult"],
+      ["safa",{bn:"সাফা",en:"Safa"},"Child"],
+      ["marwa",{bn:"মারওয়া",en:"Marwa"},"Child"],
+      ["arafa",{bn:"আরাফা",en:"Arafa"},"Child"],
+      ["hafsa",{bn:"হাফসা",en:"Hafsa"},"Child"],
+      ["kayan",{bn:"কায়ান · ছোট শিশু",en:"Kayan · young child"},"Child"],
+      ["mother",{bn:"শাশুড়ি",en:"Mother-in-law"},"Adult"],
+      ["brother",{bn:"শ্যালক",en:"Brother-in-law"},"Adult"],
+      ["nephew1",{bn:"ভাগ্নে / ভাতিজা ১",en:"Nephew 1"},"Child"],
+      ["nephew2",{bn:"ভাগ্নে / ভাতিজা ২",en:"Nephew 2"},"Child"],
+      ["nephew3",{bn:"ভাগ্নে / ভাতিজা ৩",en:"Nephew 3"},"Child"],
+      ["maid",{bn:"হাউসমেইড",en:"Housemaid"},"Adult"]
+    ].map(([id,name,role])=>({id,name,role}));
+
+    const PLACES=[
+      {id:"hotel",type:"mountain",icon:"hotel",name:{bn:"Elhane Hotel · বর্তমান base",en:"Elhane Hotel · current base"},sub:{bn:"আপনার দেওয়া Al Bahah Google Maps pin",en:"Your confirmed Al Bahah Google Maps pin"},tags:["Confirmed base","Family"],verification:{bn:"আপনার দেওয়া pin",en:"User-confirmed pin"},g:CURRENT_HOTEL,a:`https://maps.apple.com/?q=${encodeURIComponent(HOTEL_COORD)}`},
+      {id:"hussam",type:"mountain",icon:"park",name:{bn:"প্রিন্স হুসাম পার্ক",en:"Prince Hussam Park"},sub:{bn:"শিশু ও বয়স্কদের জন্য family-friendly park; glass bridge ও flower garden একই destination-এর মধ্যে",en:"Family-friendly park for children and older guests; glass bridge and flower garden are inside the same destination"},tags:["Official 2026","Easy family stop"],verification:{bn:"২৭ জুলাই ২০২৬ official visitor report",en:"Official visitor report · 27 Jul 2026"},source:"https://spa.gov.sa/en/N2642423",g:"https://www.google.com/maps/search/?api=1&query=Prince+Hussam+Park+Al+Baha",a:"https://maps.apple.com/?q=Prince+Hussam+Park+Al+Baha"},
+      {id:"raghadan",type:"mountain",icon:"trees",name:{bn:"রাঘাদান বন উদ্যান",en:"Raghadan Forest Park"},sub:{bn:"সক্রিয় Summer 2026 destination; Al-Ghaym walkway, Lavender Garden ও family facilities",en:"Active Summer 2026 destination with Al-Ghaym walkway, Lavender Garden and family facilities"},tags:["Official 2026","Parking","Play areas"],verification:{bn:"জুলাই ২০২৬ active visitor destination",en:"Active visitor destination · Jul 2026"},source:"https://www.spa.gov.sa/en/N2631071",g:"https://www.google.com/maps/search/?api=1&query=Raghadan+Forest+Park+Al+Baha",a:"https://maps.apple.com/?q=Raghadan+Forest+Park+Al+Baha"},
+      {id:"nakheel",type:"sea",icon:"waves",name:{bn:"আল নাখিল বিচ · Al Qunfudhah",en:"Al Nakheel Beach · Al Qunfudhah"},sub:{bn:"Public family beach; শুধু designated swimming zone ও live safety instruction follow করুন",en:"Public family beach; use only designated swimming zones and follow live safety instructions"},tags:["Public beach","Family","Wave watch"],verification:{bn:"Public family beach · visitor report",en:"Public family beach · visitor report"},source:"https://www.alwatan.com.sa/article/1172686",g:"https://www.google.com/maps/search/?api=1&query=Al+Nakheel+Beach+Al+Qunfudhah+Saudi+Arabia",a:"https://maps.apple.com/?q=Al+Nakheel+Beach+Al+Qunfudhah+Saudi+Arabia"},
+      {id:"south",type:"sea",icon:"sunset",name:{bn:"Al Qunfudhah South Corniche",en:"Al Qunfudhah South Corniche"},sub:{bn:"Public waterfront, walkway, শিশুদের play area ও sunset stop; swimming শুধু designated zone-এ",en:"Public waterfront with walkway, children’s play areas and sunset views; swim only in designated zones"},tags:["Public waterfront","Sunset","Easy access"],verification:{bn:"Municipal public waterfront",en:"Municipal public waterfront"},source:"https://www.spa.gov.sa/w1863606",g:"https://www.google.com/maps/search/?api=1&query=Southern+Corniche+Al+Qunfudhah+Saudi+Arabia",a:"https://maps.apple.com/?q=Southern+Corniche+Al+Qunfudhah+Saudi+Arabia"},
+      {id:"foodBaha",type:"food",icon:"food",name:{bn:"Elhane Hotel-এর কাছের family restaurants",en:"Family restaurants near Elhane Hotel"},sub:{bn:"কোনো একটি hard-coded restaurant নয়—Maps-এর live open-now result থেকে নিন",en:"No hard-coded restaurant—choose from live open-now Maps results"},tags:["Live results","Near hotel"],verification:{bn:"Live Maps search",en:"Live Maps search"},g:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Family restaurants near "+HOTEL_COORD)}`,a:`https://maps.apple.com/?q=${encodeURIComponent("Family restaurants near "+HOTEL_COORD)}`},
+      {id:"foodCoast",type:"food",icon:"fish",name:{bn:"South Corniche-এর কাছের seafood",en:"Seafood near South Corniche"},sub:{bn:"Live Maps result থেকে open, rating ও drive time দেখে বাছাই করুন",en:"Choose from live Maps results after checking open status, rating and drive time"},tags:["Live results","Seafood"],verification:{bn:"Live Maps search",en:"Live Maps search"},g:"https://www.google.com/maps/search/?api=1&query=Seafood+restaurants+near+Southern+Corniche+Al+Qunfudhah",a:"https://maps.apple.com/?q=Seafood+restaurants+near+Southern+Corniche+Al+Qunfudhah"},
+      {id:"coastRoute",type:"routes",icon:"route",name:{bn:"Elhane Hotel → Al Nakheel Beach",en:"Elhane Hotel → Al Nakheel Beach"},sub:{bn:"Al Bahah থেকে verified public beach driving route",en:"Driving route from Al Bahah to the verified public beach"},tags:["Live route","2 cars"],verification:{bn:"Google Maps live route",en:"Google Maps live route"},g:BEACH_ROUTE,a:APPLE_BEACH},
+      {id:"riyadhRoute",type:"routes",icon:"route",name:{bn:"Al Qunfudhah → Riyadh",en:"Al Qunfudhah → Riyadh"},sub:{bn:"দীর্ঘ convoy drive; live Maps, driver rotation ও stop-and-sleep rule",en:"Long convoy drive; use live Maps, driver rotation and a stop-and-sleep rule"},tags:["Long drive","2 cars"],verification:{bn:"Live route only",en:"Live route only"},g:RIYADH_ROUTE,a:"https://maps.apple.com/?saddr=Al+Qunfudhah+Saudi+Arabia&daddr=Riyadh+Saudi+Arabia&dirflg=d"}
+    ];
+
+    const HOTELS=[
+      {id:"beachInn",name:"Beach Inn Al Qunfudhah",sub:{bn:"South Corniche · beach-facing option",en:"South Corniche · beach-facing option"},traits:[{bn:"বর্তমান ২০২৬ listing পাওয়া গেছে",en:"Current 2026 listing found"},{bn:"১৩ জনের legal occupancy ফোনে নিশ্চিত করুন",en:"Confirm legal occupancy for 13 by phone"}],phone:"tel:+966177334000",map:"https://www.google.com/maps/search/?api=1&query=Beach+Inn+Al+Qunfudhah+Saudi+Arabia",recommended:true},
+      {id:"wSuites",name:"W Suites Al Qunfudhah",sub:{bn:"Al Khalidiyah · room-comfort option",en:"Al Khalidiyah · room-comfort option"},traits:[{bn:"Official group site listing",en:"Listed on the official group site"},{bn:"Family room configuration জিজ্ঞেস করুন",en:"Ask for family-room configuration"}],phone:"tel:+966500800368",map:"https://www.google.com/maps/search/?api=1&query=W+Suites+Al+Qunfudhah+Saudi+Arabia"},
+      {id:"ozPark",name:"OZ Park Hotel",sub:{bn:"Sea-view room availability backup",en:"Sea-view room availability backup"},traits:[{bn:"Current ২০২৬ booking listing",en:"Current 2026 booking listing"},{bn:"Parking, lift ও cancellation নিশ্চিত করুন",en:"Confirm parking, lift and cancellation"}],map:"https://www.google.com/maps/search/?api=1&query=OZ+Park+Hotel+Al+Qunfudhah+Saudi+Arabia"}
+    ];
+
+    const DAYS=[
+      {id:"d1",date:"2026-08-14",short:{bn:"১৪ আগ",en:"14 Aug"},week:{bn:"শুক্রবার",en:"Friday"},title:{bn:"আল-বাহায় পৌঁছানো",en:"Arrival in Al Bahah"},loc:{bn:"Al Bahah",en:"Al Bahah"},summary:{bn:"Hotel settle-in, family headcount ও বিশ্রাম",en:"Hotel settle-in, family headcount and rest"},activities:[
+        ["14:00",{bn:"Elhane Hotel check-in",en:"Check in at Elhane Hotel"},{bn:"১৩ জন, দুই গাড়ি, bags ও room allocation verify করুন।",en:"Verify all 13 people, both cars, bags and room allocation."},"hotel"],
+        ["17:30",{bn:"শুধু energy থাকলে local evening",en:"Local evening only if everyone has energy"},{bn:"Long drive-এর পরে forced sightseeing নয়; hotel-এর কাছাকাছি থাকুন।",en:"Do not force sightseeing after a long drive; stay close to the hotel."},"foodBaha"],
+        ["21:00",{bn:"Next-day family briefing",en:"Next-day family briefing"},{bn:"Headcount, medicines, child bag, car fuel ও weather review।",en:"Review headcount, medicines, child bag, fuel and weather."},null]
+      ]},
+      {id:"d2",date:"2026-08-15",short:{bn:"১৫ আগ",en:"15 Aug"},week:{bn:"শনিবার",en:"Saturday"},title:{bn:"Verified family park day",en:"Verified family park day"},loc:{bn:"Al Bahah",en:"Al Bahah"},summary:{bn:"Prince Hussam Park-এর এক destination plan—অপ্রয়োজনীয় driving নেই",en:"One-destination plan at Prince Hussam Park with no unnecessary driving"},activities:[
+        ["14:45",{bn:"Hotel lunch, নামাজ ও rest",en:"Lunch, prayer and rest at the hotel"},{bn:"আজকের বিকালের আগে শিশু, শাশুড়ি ও drivers-কে বিশ্রাম দিন।",en:"Let the children, your mother-in-law and the drivers rest before the evening."},"hotel"],
+        ["16:30",{bn:"Prince Hussam Park",en:"Prince Hussam Park"},{bn:"Officially active Summer 2026 family destination; main entrance/parking pin-এই যান।",en:"Officially active Summer 2026 family destination; navigate to the main park/parking pin."},"hussam"],
+        ["17:30",{bn:"Glass bridge + flower garden",en:"Glass bridge + flower garden"},{bn:"একই park-এর ভিতরে; crowd বেশি হলে elderly ও children-এর pace অনুযায়ী short visit রাখুন।",en:"Inside the same park; keep it short for older guests and children if crowded."},"hussam"],
+        ["20:00",{bn:"Hotel-এর কাছে live-open dinner",en:"Live-open dinner near the hotel"},{bn:"App-এর live Maps search থেকে open-now family restaurant নিন; hard-coded নাম follow করবেন না।",en:"Choose an open-now family restaurant from the app’s live Maps search; do not follow a hard-coded name."},"foodBaha"]
+      ]},
+      {id:"d3",date:"2026-08-16",short:{bn:"১৬ আগ",en:"16 Aug"},week:{bn:"রবিবার",en:"Sunday"},title:{bn:"Raghadan only + coast preparation",en:"Raghadan only + coast preparation"},loc:{bn:"Al Bahah",en:"Al Bahah"},summary:{bn:"একটি verified forest destination, তারপর ২ রাতের coast packing",en:"One verified forest destination, then packing for two nights on the coast"},activities:[
+        ["10:00",{bn:"Late breakfast ও free morning",en:"Late breakfast and free morning"},{bn:"Extra mountain stops যোগ করবেন না; family energy preserve করুন।",en:"Do not add extra mountain stops; preserve family energy."},"hotel"],
+        ["15:30",{bn:"Raghadan Forest Park",en:"Raghadan Forest Park"},{bn:"Main entrance ও official parking ব্যবহার করুন; random forest pin বা private road নয়।",en:"Use the main entrance and official parking; avoid random forest pins or private roads."},"raghadan"],
+        ["17:00",{bn:"Al-Ghaym walkway / Lavender Garden",en:"Al-Ghaym walkway / Lavender Garden"},{bn:"Raghadan-এর একই public destination-এর মধ্যে stay করুন।",en:"Stay within the same public Raghadan destination."},"raghadan"],
+        ["20:30",{bn:"Coast bags + দুই গাড়ির safety check",en:"Coast bags + two-car safety check"},{bn:"Fuel, tyres, brakes, child seat, chargers, hotel booking ও offline Maps।",en:"Fuel, tyres, brakes, child seat, chargers, hotel booking and offline Maps."},null]
+      ]},
+      {id:"d4",date:"2026-08-17",short:{bn:"১৭ আগ",en:"17 Aug"},week:{bn:"সোমবার",en:"Monday"},title:{bn:"Al Bahah → Red Sea",en:"Al Bahah → Red Sea"},loc:{bn:"Al Bahah → Al Qunfudhah",en:"Al Bahah → Al Qunfudhah"},summary:{bn:"Daylight mountain descent, beach hotel check-in ও public Corniche",en:"Daylight mountain descent, beach hotel check-in and the public Corniche"},activities:[
+        ["08:00",{bn:"Checkout + ১৩ জন headcount",en:"Checkout + headcount for all 13"},{bn:"Room sweep, bag count, দুই গাড়ি ও driver readiness নিশ্চিত করুন।",en:"Confirm room sweep, bag count, both cars and driver readiness."},"hotel"],
+        ["08:30",{bn:"Al Qunfudhah-এর দিকে রওনা",en:"Depart for Al Qunfudhah"},{bn:"Live Maps follow করুন; daylight-এ mountain descent শেষ করুন।",en:"Follow live Maps and finish the mountain descent in daylight."},"coastRoute"],
+        ["13:00",{bn:"Beach hotel check-in",en:"Beach hotel check-in"},{bn:"১৩ জনের legal occupancy, rooms, parking, lift ও tax আবার confirm করুন।",en:"Reconfirm legal occupancy for 13 guests, rooms, parking, lift and taxes."},null],
+        ["16:45",{bn:"South Corniche sunset",en:"South Corniche sunset"},{bn:"Public waterfront থেকে শুরু করুন; designated zone ছাড়া water-এ নামবেন না।",en:"Start at the public waterfront; enter the water only in a designated zone."},"south"],
+        ["19:30",{bn:"Live-open seafood dinner",en:"Live-open seafood dinner"},{bn:"App-এর live Maps search থেকে open restaurant নিন।",en:"Choose an open restaurant from the app’s live Maps search."},"foodCoast"]
+      ]},
+      {id:"d5",date:"2026-08-18",short:{bn:"১৮ আগ",en:"18 Aug"},week:{bn:"মঙ্গলবার",en:"Tuesday"},title:{bn:"Public beach + wave watch",en:"Public beach + wave watch"},loc:{bn:"Al Qunfudhah",en:"Al Qunfudhah"},summary:{bn:"Al Nakheel Beach সকাল, midday rest, South Corniche বিকাল",en:"Al Nakheel Beach in the morning, midday rest and South Corniche in the afternoon"},activities:[
+        ["06:00",{bn:"Al Nakheel Beach · cool-hour visit",en:"Al Nakheel Beach · cool-hour visit"},{bn:"Public family beach; শিশুদের arm’s-reach supervision এবং designated swimming area।",en:"Public family beach; keep children within arm’s reach and use a designated swimming area."},"nakheel"],
+        ["09:00",{bn:"Breakfast, shower ও hydration",en:"Breakfast, shower and hydration"},{bn:"Sunscreen, পানি, wet-clothes bag এবং AC recovery।",en:"Use sunscreen, water, wet-clothes bags and air-conditioned recovery."},null],
+        ["12:00",{bn:"Hotel / AC rest",en:"Hotel / air-conditioned rest"},{bn:"Coast heat-এর সময় outdoor activity বন্ধ রাখুন।",en:"Avoid outdoor activity during the hottest hours."},null],
+        ["16:30",{bn:"South Corniche wave watch + sunset",en:"South Corniche wave watch + sunset"},{bn:"বেশি chop দেখতে পারেন; rough water হলে shoreline থেকে দেখুন—swim নয়।",en:"You may see more chop; if the water is rough, watch from shore and do not swim."},"south"],
+        ["20:00",{bn:"Riyadh return briefing",en:"Riyadh return briefing"},{bn:"Drivers, fuel, breaks, departure time এবং stop-and-sleep rule final করুন।",en:"Finalize drivers, fuel, breaks, departure time and the stop-and-sleep rule."},null]
+      ]},
+      {id:"d6",date:"2026-08-19",short:{bn:"১৯ আগ",en:"19 Aug"},week:{bn:"বুধবার",en:"Wednesday"},title:{bn:"Riyadh return",en:"Return to Riyadh"},loc:{bn:"Al Qunfudhah → Riyadh",en:"Al Qunfudhah → Riyadh"},summary:{bn:"দুই গাড়ির convoy default; flight শুধু car-return plan নিশ্চিত হলে",en:"Two-car convoy by default; fly only after confirming the car-return plan"},activities:[
+        ["05:30",{bn:"Checkout, room sweep ও headcount",en:"Checkout, room sweep and headcount"},{bn:"১৩ জন, সব bags, medicine, IDs, phones এবং দুই গাড়ি verify করুন।",en:"Verify all 13 people, every bag, medicine, IDs, phones and both cars."},null],
+        ["06:00",{bn:"Riyadh convoy শুরু",en:"Start the Riyadh convoy"},{bn:"Live Maps, দুই rested drivers, car-to-car contact এবং no-rush rule।",en:"Use live Maps, two rested drivers, car-to-car contact and a no-rush rule."},"riyadhRoute"],
+        ["08:00",{bn:"প্রতি দুই ঘণ্টায় safety break",en:"Safety break every two hours"},{bn:"Fuel, prayer, খাবার, stretch ও driver alertness check।",en:"Check fuel, prayer, food, stretching and driver alertness."},null],
+        ["18:00",{bn:"Arrival window · flexible",en:"Flexible arrival window"},{bn:"Traffic ও family breaks অনুযায়ী সময় বদলাবে; fatigue হলে verified hotel-এ stop করুন।",en:"Timing depends on traffic and family breaks; stop at a verified hotel if tired."},null]
+      ]}
+    ].map(d=>({...d,activities:d.activities.map((a,i)=>({id:`${d.id}_${i}`,time:a[0],title:a[1],details:a[2],placeId:a[3]}))}));
+
+    const CHECKLISTS=[
+      {id:"daybag",title:{bn:"Al Bahah day bag",en:"Al Bahah day bag"},items:["পানি ও snacks|Water and snacks","নামাজের প্রয়োজনীয় জিনিস|Prayer essentials","Light jacket / shawl|Light jacket / shawl","Kayan diaper, wipes ও milk|Kayan diaper, wipes and milk","Medicine + first aid|Medicine + first aid","Power banks + cables|Power banks + cables"]},
+      {id:"beach",title:{bn:"Beach packing",en:"Beach packing"},items:["Sunscreen|Sunscreen","Swimwear|Swimwear","Towels|Towels","Wet-clothes bags|Wet-clothes bags","Sandals / swim shoes|Sandals / swim shoes","Extra child clothes|Extra child clothes","Water + shade|Water + shade"]},
+      {id:"hotel",title:{bn:"২ রাতের hotel bag",en:"Two-night hotel bag"},items:["১৭–১৯ আগস্টের পোশাক|Clothes for 17–19 August","Toiletries|Toiletries","IDs + booking confirmation|IDs + booking confirmation","Kayan feeding supplies|Kayan feeding supplies","Chargers|Chargers","Medicine / first aid|Medicine / first aid"]},
+      {id:"cars",title:{bn:"দুই গাড়ির check",en:"Two-car check"},items:["Fuel|Fuel","Tyre pressure + spare tyre|Tyre pressure + spare tyre","Brake response|Brake response","Child seat|Child seat","Offline maps|Offline maps","Car chargers|Car chargers","Driver rest + rotation|Driver rest + rotation","Convoy contact plan|Convoy contact plan"]},
+      {id:"return",title:{bn:"Riyadh return check",en:"Riyadh return check"},items:["Room sweep|Room sweep","All 13 present|All 13 present","All bags counted|All bags counted","Two drivers confirmed|Two drivers confirmed","Break plan every 2 hours|Break plan every 2 hours","Fuel / meal / prayer stops|Fuel / meal / prayer stops","Stop-and-sleep rule agreed|Stop-and-sleep rule agreed"]}
+    ].map(c=>({...c,items:c.items.map((x,i)=>{const [bn,en]=x.split("|");return{id:`${c.id}_${i}`,text:{bn,en}}})}));
+
+    const DEFAULT_STATE={
+      version:2,lang:"bn",tab:"home",activeDay:"d2",placeFilter:"all",moreTab:"family",selectedHotel:"",budgetTarget:3000,
+      completed:{},present:{},cars:{},packing:{},returnMode:"direct",hotelQuotes:{},settings:{hotelName:"Elhane Hotel",room:"",emergency:"",note:""},weather:{},weatherStatus:"idle"
+    };
+
+    const memoryStore={};
+    const storage=(()=>{
+      try{
+        const s=window.localStorage,key="__k2_test__";s.setItem(key,"1");s.removeItem(key);return s;
+      }catch(_){
+        return{getItem:k=>Object.prototype.hasOwnProperty.call(memoryStore,k)?memoryStore[k]:null,setItem:(k,v)=>memoryStore[k]=String(v),removeItem:k=>delete memoryStore[k]};
+      }
+    })();
+    const STORE_KEY="k2fam-trip-2026-remix-v2";
+    const clone=x=>JSON.parse(JSON.stringify(x));
+    const plain=x=>x&&typeof x==="object"&&!Array.isArray(x);
+    function deepMerge(base,inc){if(Array.isArray(base))return Array.isArray(inc)?inc:clone(base);if(!plain(base))return inc===undefined?base:inc;const out={};for(const k of Object.keys(base))out[k]=deepMerge(base[k],inc&&Object.prototype.hasOwnProperty.call(inc,k)?inc[k]:undefined);return out}
+    function normalize(raw){
+      const s=deepMerge(DEFAULT_STATE,plain(raw)?raw:{});
+      s.lang=["bn","en"].includes(s.lang)?s.lang:"bn";
+      s.tab=["home","plan","explore","stay","more"].includes(s.tab)?s.tab:"home";
+      s.activeDay=DAYS.some(d=>d.id===s.activeDay)?s.activeDay:todayDay().id;
+      s.placeFilter=["all","mountain","sea","food","routes"].includes(s.placeFilter)?s.placeFilter:"all";
+      s.moreTab=["family","packing","return","settings"].includes(s.moreTab)?s.moreTab:"family";
+      s.selectedHotel=HOTELS.some(h=>h.id===s.selectedHotel)?s.selectedHotel:"";
+      s.returnMode=["direct","split","stopover"].includes(s.returnMode)?s.returnMode:"direct";
+      s.budgetTarget=Math.max(0,Number(s.budgetTarget)||3000);
+      for(const h of HOTELS){const q=plain(s.hotelQuotes[h.id])?s.hotelQuotes[h.id]:{};s.hotelQuotes[h.id]={units:Math.max(1,Number(q.units)||3),nightly:Math.max(0,Number(q.nightly)||0),nights:Math.max(1,Number(q.nights)||2),fees:Math.max(0,Number(q.fees)||0)}}
+      for(const m of MEMBERS){s.present[m.id]=!!s.present[m.id];s.cars[m.id]=["A","B"].includes(s.cars[m.id])?s.cars[m.id]:""}
+      return s;
+    }
+    function load(){try{return normalize(JSON.parse(storage.getItem(STORE_KEY)||"null"))}catch(_){return normalize(null)}}
+    let state=load(),deferredInstall=null,toastTimer=null;
+    function save(){storage.setItem(STORE_KEY,JSON.stringify(state))}
+    function t(k){return I18N[state.lang][k]||k}
+    function l(v){return typeof v==="string"?v:(v&&v[state.lang])||(v&&v.bn)||""}
+    function esc(v){return String(v??"").replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]))}
+    function money(v){return new Intl.NumberFormat(state.lang==="bn"?"bn-BD":"en-US",{maximumFractionDigits:0}).format(Number(v)||0)}
+    function initials(name){const x=l(name).replace(/[·/]/g," ").trim().split(/\s+/).filter(Boolean);return (x[0]?.[0]||"?")+(x[1]?.[0]||"")}
+    function icon(name,size=20){
+      const p={
+        home:'<path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.5V20h13v-9.5"/><path d="M9.5 20v-6h5v6"/>',
+        calendar:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/>',
+        pin:'<path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',
+        hotel:'<path d="M4 21V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v16M2 21h20M8 7h2M8 11h2M13 7h2M13 11h2M8 21v-5h5v5"/>',
+        more:'<circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/>',
+        share:'<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/>',
+        route:'<circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M8.5 16.5c3-1 2-5 5-6.5l2-1"/>',
+        users:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
+        note:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/>',
+        check:'<path d="m5 12 4 4L19 6"/>',
+        close:'<path d="m6 6 12 12M18 6 6 18"/>',
+        refresh:'<path d="M20 11a8.1 8.1 0 1 0 .2 4M20 4v7h-7"/>',
+        waves:'<path d="M2 8c2.5 0 2.5 2 5 2s2.5-2 5-2 2.5 2 5 2 2.5-2 5-2M2 14c2.5 0 2.5 2 5 2s2.5-2 5-2 2.5 2 5 2 2.5-2 5-2"/>',
+        sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.41M17.66 6.34l1.41-1.41"/>',
+        cloud:'<path d="M17.5 19H8a6 6 0 1 1 1.4-11.8A5.5 5.5 0 0 1 20 9.5 4.5 4.5 0 0 1 17.5 19Z"/>',
+        landmark:'<path d="m3 10 9-6 9 6M5 10h14M6 10v7M10 10v7M14 10v7M18 10v7M4 17h16M3 21h18"/>',
+        trees:'<path d="m8 3-5 8h3l-4 7h12l-4-7h3L8 3ZM17 6l-3 5h2l-2 4h8l-3-4h2l-4-5ZM8 18v3M18 15v6"/>',
+        park:'<path d="M5 21v-6M19 21v-6M3 15h18M5 15V9h14v6M8 9V6h8v3"/>',
+        sunset:'<path d="M4 18h16M6 22h12M2 14h2M20 14h2M12 4v2M5.6 7.6 7 9M18.4 7.6 17 9"/><path d="M7 14a5 5 0 0 1 10 0"/>',
+        food:'<path d="M7 2v8M4 2v5a3 3 0 0 0 6 0V2M7 10v12M17 2v20M17 2c3 2 4 6 0 10"/>',
+        fish:'<path d="M6 12s4-5 10-4l4-3v14l-4-3c-6 1-10-4-10-4Z"/><circle cx="15" cy="11" r="1"/><path d="M6 12 2 9v6l4-3Z"/>',
+        wallet:'<path d="M4 5h14a2 2 0 0 1 2 2v12H4a2 2 0 0 1-2-2V5a3 3 0 0 1 3-3h12"/><path d="M16 11h6v5h-6a2.5 2.5 0 0 1 0-5Z"/>',
+        download:'<path d="M12 3v12M7 10l5 5 5-5M5 21h14"/>',
+        upload:'<path d="M12 21V9M7 14l5-5 5 5M5 3h14"/>',
+        phone:'<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1 .3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/>',
+        settings:'<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V21h-4v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H3v-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 10 3h4v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.1v4H21a1.7 1.7 0 0 0-1.6 1Z"/>'
+      };
+      return `<svg aria-hidden="true" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${p[name]||p.more}</svg>`
+    }
+
+    function saudiDate(){
+      const parts=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Riyadh",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
+      const x=Object.fromEntries(parts.map(p=>[p.type,p.value]));return `${x.year}-${x.month}-${x.day}`
+    }
+    function saudiTime(){return new Intl.DateTimeFormat(state.lang==="bn"?"bn-BD":"en-GB",{timeZone:"Asia/Riyadh",weekday:"long",day:"numeric",month:"long",hour:"numeric",minute:"2-digit"}).format(new Date())}
+    function todayDay(){const d=saudiDate();return DAYS.find(x=>x.date===d)|| (d<DAYS[0].date?DAYS[0]:DAYS[DAYS.length-1])}
+    function tripDayIndex(){const d=saudiDate(),idx=DAYS.findIndex(x=>x.date===d);return idx>=0?idx:(d<DAYS[0].date?0:DAYS.length-1)}
+    function relativeLabel(day){const now=saudiDate();if(day.date===now)return t("today");const idx=DAYS.findIndex(x=>x.date===day.date),cur=DAYS.findIndex(x=>x.date===now);if(cur>=0&&idx===cur+1)return t("tomorrow");return l(day.week)}
+    function nextActivity(){
+      const nowDate=saudiDate(),nowTime=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Riyadh",hour:"2-digit",minute:"2-digit",hour12:false}).format(new Date());
+      for(const d of DAYS){if(d.date<nowDate)continue;for(const a of d.activities){if(state.completed[a.id])continue;if(d.date===nowDate&&a.time<nowTime)continue;return{day:d,activity:a}}}
+      for(const d of DAYS)for(const a of d.activities)if(!state.completed[a.id])return{day:d,activity:a};return null
+    }
+    function selectedHotel(){return HOTELS.find(h=>h.id===state.selectedHotel)||null}
+    function hotelTotal(id){const q=state.hotelQuotes[id];return q?q.units*q.nightly*q.nights+q.fees:0}
+    function selectedTotal(){return state.selectedHotel?hotelTotal(state.selectedHotel):0}
+    function presentCount(){return MEMBERS.filter(m=>state.present[m.id]).length}
+    function doneCount(){return Object.values(state.completed).filter(Boolean).length}
+    function totalActivities(){return DAYS.reduce((n,d)=>n+d.activities.length,0)}
+    function appUrl(){try{const u=new URL(location.href);if(["http:","https:"].includes(u.protocol)&&u.hostname!=="localhost"&&u.hostname!=="127.0.0.1")return u.href}catch(_){}return PUBLIC_URL}
+    function mapLink(placeId,apple=false){const p=PLACES.find(x=>x.id===placeId);return p?(apple?p.a:p.g):""}
+
+    function render(){
+      document.documentElement.lang=state.lang;
+      document.querySelector(".lang-btn").textContent=state.lang==="bn"?"EN":"বাংলা";
+      document.getElementById("shareTop").innerHTML=icon("share",19);
+      document.querySelector(".sheet-close").innerHTML=icon("close",18);
+      document.getElementById("brandSub").textContent=t("tripRoute")+" · 2026";
+      renderNav();
+      const main=document.getElementById("main");
+      main.innerHTML=`<section class="screen">${state.tab==="home"?renderHome():state.tab==="plan"?renderPlan():state.tab==="explore"?renderExplore():state.tab==="stay"?renderStay():renderMore()}</section>`;
+      if(state.tab==="plan")requestAnimationFrame(()=>{const strip=document.querySelector(".day-strip"),active=strip&&strip.querySelector(".day-chip.active");if(strip&&active)strip.scrollLeft=Math.max(0,active.offsetLeft-(strip.clientWidth-active.clientWidth)/2)});
+      save();
+    }
+    function renderNav(){
+      const items=[["home","home",t("home")],["plan","calendar",t("plan")],["explore","pin",t("explore")],["stay","hotel",t("stay")],["more","more",t("more")]];
+      document.getElementById("bottomNav").innerHTML=items.map(([id,ic,label])=>`<button type="button" class="nav-btn ${state.tab===id?"active":""}" data-tab="${id}" aria-current="${state.tab===id?"page":"false"}">${icon(ic,20)}<span>${esc(label)}</span></button>`).join("");
+    }
+    function renderHome(){
+      const idx=tripDayIndex(),progress=Math.round(((idx+1)/DAYS.length)*100),next=nextActivity(),sel=selectedHotel(),present=presentCount();
+      const today=DAYS[idx];
+      const upcoming=(today.activities||[]).filter(a=>!state.completed[a.id]).slice(0,4);
+      return `<div class="home-layout"><div class="home-primary">
+        <article class="hero">
+          <svg class="hero-art" viewBox="0 0 1200 280" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="sea" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#20516a" stop-opacity=".6"/><stop offset="1" stop-color="#07111f"/></linearGradient></defs><path d="M0 177 88 130l70 33 92-81 82 61 85-105 91 99 76-69 75 66 73-31 79 36 75-57 84 67 108-88 113 110 109-42v151H0Z" fill="#102b3f"/><path d="M0 207c120-20 169 31 285 8s176-2 276 18 178-45 299-23 212 4 340-4v74H0Z" fill="url(#sea)"/><path d="M0 230c90-20 153 18 246 0s168-7 259 12 188-24 285-9 173 4 410-9" fill="none" stroke="#68d8cf" stroke-opacity=".33" stroke-width="4"/></svg>
+          <div class="hero-content">
+            <div class="route-label">${esc(t("tripRoute"))}</div>
+            <h1>${esc(t("tripTitle"))}</h1>
+            <p class="hero-sub">${esc(t("tripSub"))}<br>${esc(saudiTime())} · ${esc(l(today.loc))}</p>
+            <div class="hero-bottom">
+              <div class="next-panel"><span class="micro">${esc(t("next"))}</span><strong>${next?`${esc(l(next.day.short))} · ${esc(next.activity.time)} — ${esc(l(next.activity.title))}`:esc(t("tripEnded"))}</strong><p>${next?esc(l(next.activity.details)):""}</p></div>
+              <div class="progress-panel"><div class="ring" style="--p:${progress}"><strong>${progress}%</strong></div><div class="progress-copy"><b>${esc(t("day"))} ${idx+1} / 6</b><span>${doneCount()} / ${totalActivities()} ${esc(t("complete"))}</span></div></div>
+            </div>
+          </div>
+        </article>
+        <div class="trust-strip">${icon("check",18)}<div><strong>${state.lang==="bn"?"Verified-only route active":"Verified-only route active"}</strong><span>${state.lang==="bn"?"১৫ আগস্ট ২০২৬ যাচাই: Prince Hussam ও Raghadan official 2026 active; coast-এ শুধু public South Corniche ও Al Nakheel Beach রাখা হয়েছে।":"Verified 15 Aug 2026: Prince Hussam and Raghadan are officially active in 2026; the coast plan uses only the public South Corniche and Al Nakheel Beach."}</span></div></div>
+        <div class="status-rail">
+          <div class="status-item"><span>${esc(t("travellers"))}</span><strong>${present?`${present}/13`:`0/13`}</strong></div>
+          <div class="status-item"><span>${esc(t("cars"))}</span><strong>2 · A / B</strong></div>
+          <div class="status-item"><span>${esc(t("hotel"))}</span><strong>${esc(sel?sel.name:t("notSelected"))}</strong></div>
+        </div>
+        <section class="section">
+          <div class="quick-grid">
+            <button class="quick-action" type="button" data-action="route-sheet"><span class="qicon">${icon("route",20)}</span><strong>${esc(t("route"))}</strong></button>
+            <button class="quick-action" type="button" data-action="share-whatsapp"><span class="qicon">${icon("share",20)}</span><strong>${esc(t("whatsapp"))}</strong></button>
+            <button class="quick-action" type="button" data-action="go-family"><span class="qicon">${icon("users",20)}</span><strong>${esc(t("headcount"))}</strong></button>
+            <button class="quick-action" type="button" data-action="share-sheet"><span class="qicon">${icon("note",20)}</span><strong>${esc(t("notesPdf"))}</strong></button>
+          </div>
+        </section>
+        <section class="section">
+          <div class="section-head"><div><h2>${esc(t("todayPlan"))}</h2><p>${esc(relativeLabel(today))} · ${esc(l(today.title))}</p></div><button type="button" class="section-link" data-tab="plan">${esc(t("viewAll"))}</button></div>
+          <div class="panel"><div class="timeline">${upcoming.length?upcoming.map(a=>renderTimelineItem(a,today)).join(""):`<div class="empty">${esc(t("tripEnded"))}</div>`}</div></div>
+        </section>
+      </div><aside class="home-secondary">
+        <section class="section"><div class="section-head"><div><h2>${esc(t("weather"))}</h2><p>${esc(t("weatherSub"))}</p></div><button type="button" class="section-link" data-action="refresh-weather">${esc(t("refresh"))}</button></div>${renderWeather()}</section>
+        <section class="section"><div class="notice teal">${icon("check",18)}<div><strong>${esc(t("safety"))}</strong><br>${esc(t("safetyText"))}</div></div></section>
+      </aside></div>`
+    }
+    function renderTimelineItem(a,d){const done=!!state.completed[a.id],p=a.placeId?PLACES.find(x=>x.id===a.placeId):null;return `<div class="timeline-item ${done?"done":""}"><span class="timeline-dot"></span><div class="timeline-time">${esc(a.time)}</div><div class="timeline-content"><strong>${esc(l(a.title))}</strong><p>${esc(l(a.details))}</p><div class="timeline-actions"><button type="button" class="btn small ghost" data-action="toggle-activity" data-id="${a.id}">${icon("check",13)} ${done?esc(t("complete")):esc(t("markDone"))}</button>${p?`<a class="btn small ghost" href="${esc(p.g)}" target="_blank" rel="noopener">${icon("pin",13)} ${esc(t("openMaps"))}</a>`:""}</div></div></div>`}
+    function renderWeather(){
+      const items=[["albaha","Al Bahah",false],["coast","Al Qunfudhah",true]];
+      return `<div class="weather-grid">${items.map(([id,name,coast])=>{const w=state.weather[id];if(!w)return `<div class="weather-card ${coast?"coast":""}"><h3>${name}</h3><div class="temp">—°</div><p>${state.weatherStatus==="loading"?t("loading"):t("unavailable")}</p><span class="weather-icon">${icon(coast?"waves":"cloud",28)}</span></div>`;return `<div class="weather-card ${coast?"coast":""}"><h3>${name}</h3><div class="temp">${Math.round(w.temp)}°</div><p>${Math.round(w.high)}° / ${Math.round(w.low)}° · gust ${Math.round(w.gust||0)} km/h<br>${w.updated?new Date(w.updated).toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"}):""}</p><span class="weather-icon">${icon(coast?"waves":"sun",28)}</span></div>`}).join("")}</div>`
+    }
+    function renderPlan(){
+      const d=DAYS.find(x=>x.id===state.activeDay)||DAYS[0],today=todayDay();
+      return `<div class="section-head"><div><h2>${esc(t("planTitle"))}</h2><p>${esc(t("planSub"))}</p></div></div>
+        <div class="day-strip">${DAYS.map((x,i)=>`<button type="button" class="day-chip ${x.id===d.id?"active":""} ${x.date===today.date?"today":""}" data-day="${x.id}"><span>${esc(l(x.short))}</span><strong>${esc(t("day"))} ${i+1}</strong></button>`).join("")}</div>
+        <article class="day-hero"><span class="micro">${esc(l(d.week))} · ${esc(l(d.short))} 2026</span><h2>${esc(l(d.title))}</h2><p class="muted small">${esc(l(d.summary))}</p><div class="day-meta"><span class="tag teal">${icon("pin",13)} ${esc(l(d.loc))}</span><span class="tag gold">${icon("users",13)} 13</span><span class="tag">${icon("route",13)} 2 cars</span></div></article>
+        <div class="activity-list">${d.activities.map(a=>renderActivity(a)).join("")}</div>
+        <div class="sp12"></div><div class="notice">${icon("sun",18)}<div>${esc(d.id==="d5"?(state.lang==="bn"?"বেশি ঢেউ দেখার জন্য late afternoon target করুন, তবে live condition unsafe হলে shoreline থেকে দেখুন।":"Target late afternoon for more visible chop, but stay on shore if live conditions are unsafe."):t("safetyText"))}</div></div>`
+    }
+    function renderActivity(a){const done=!!state.completed[a.id],p=a.placeId?PLACES.find(x=>x.id===a.placeId):null;return `<div class="activity ${done?"done":""}"><div class="time">${esc(a.time)}</div><div class="copy"><strong>${esc(l(a.title))}</strong><p>${esc(l(a.details))}</p>${p?`<div class="button-row"><a class="btn small ghost" href="${esc(p.g)}" target="_blank" rel="noopener">${icon("pin",13)} ${esc(t("openMaps"))}</a><a class="btn small ghost" href="${esc(p.a)}" target="_blank" rel="noopener">${esc(t("appleMaps"))}</a></div>`:""}</div><button type="button" class="check-btn" data-action="toggle-activity" data-id="${a.id}" aria-label="${esc(t("markDone"))}">${icon("check",17)}</button></div>`}
+    function renderExplore(){const filtered=PLACES.filter(p=>state.placeFilter==="all"||p.type===state.placeFilter);return `<div class="section-head"><div><h2>${esc(t("exploreTitle"))}</h2><p>${esc(t("exploreSub"))}</p></div></div><div class="trust-strip">${icon("check",18)}<div><strong>${state.lang==="bn"?"Access rule":"Access rule"}</strong><span>${state.lang==="bn"?"Official/public visitor evidence ছাড়া কোনো attraction itinerary-তে রাখা হয়নি। Restaurant-এর জন্য hard-coded নামের বদলে live open-now search ব্যবহার করা হয়েছে।":"No attraction is scheduled without official/public visitor evidence. Restaurants use live open-now searches instead of hard-coded names."}</span></div></div><div class="filters">${[["all",t("all")],["mountain",t("mountain")],["sea",t("sea")],["food",t("food")],["routes",t("routes")]].map(([id,label])=>`<button type="button" class="filter-btn ${state.placeFilter===id?"active":""}" data-filter="${id}">${esc(label)}</button>`).join("")}</div><div class="place-list">${filtered.map(renderPlace).join("")}</div>`}
+    function renderPlace(p){return `<article class="place-card"><div class="place-top"><div class="place-icon">${icon(p.icon,21)}</div><div class="place-copy"><h3>${esc(l(p.name))}</h3><p>${esc(l(p.sub))}</p></div></div><div class="place-meta"><span class="verified-badge">${icon("check",11)} ${esc(l(p.verification))}</span>${p.tags.map(x=>`<span class="tag">${esc(x)}</span>`).join("")}</div><div class="button-row"><a class="btn primary" href="${esc(p.g)}" target="_blank" rel="noopener">${icon("pin",15)} ${esc(t("openMaps"))}</a><a class="btn ghost" href="${esc(p.a)}" target="_blank" rel="noopener">${esc(t("appleMaps"))}</a>${p.source?`<a class="btn ghost source-btn" href="${esc(p.source)}" target="_blank" rel="noopener">Source</a>`:""}<button type="button" class="btn ghost" data-action="share-place" data-place="${p.id}">${icon("share",15)}</button></div></article>`}
+    function renderStay(){const total=selectedTotal(),pct=state.budgetTarget?Math.min(100,Math.round(total/state.budgetTarget*100)):0,status=total?(total<=state.budgetTarget?t("withinBudget"):t("overBudget")):t("noQuote");return `<div class="section-head"><div><h2>${esc(t("stayTitle"))}</h2><p>${esc(t("staySub"))}</p></div></div><div class="budget-panel"><div class="budget-line"><div><span>${esc(t("selectedTotal"))}</span><strong>${total?`SAR ${money(total)}`:"—"}</strong></div><div style="text-align:right"><span>${esc(t("budgetTarget"))}</span><strong style="font-size:17px">SAR ${money(state.budgetTarget)}</strong></div></div><div class="budget-bar"><i style="width:${pct}%"></i></div><div class="small muted" style="margin-top:8px">${esc(status)}</div></div><div class="notice teal">${icon("users",18)}<div>${esc(t("quoteNote"))}</div></div><div class="sp12"></div><div class="hotel-list">${HOTELS.map(renderHotel).join("")}</div>`}
+    function renderHotel(h){const q=state.hotelQuotes[h.id],total=hotelTotal(h.id),selected=state.selectedHotel===h.id;return `<article class="hotel-card ${selected?"selected":""}"><div class="hotel-top"><div class="hotel-icon">${icon("hotel",21)}</div><div class="hotel-copy">${h.recommended?`<div class="recommend">${state.lang==="bn"?"আমার প্রথম পছন্দ":"Top pick"}</div>`:""}<h3>${esc(h.name)}</h3><p>${esc(l(h.sub))}</p></div></div><div class="place-meta">${h.traits.map(x=>`<span class="tag">${esc(l(x))}</span>`).join("")}</div><div class="quote-grid"><div class="field"><label>${esc(t("rooms"))}</label><input inputmode="numeric" type="number" min="1" max="10" data-quote="units" data-hotel="${h.id}" value="${q.units}"></div><div class="field"><label>${esc(t("nightly"))}</label><input inputmode="decimal" type="number" min="0" data-quote="nightly" data-hotel="${h.id}" value="${q.nightly||""}" placeholder="SAR"></div><div class="field"><label>${esc(t("nights"))}</label><input inputmode="numeric" type="number" min="1" max="14" data-quote="nights" data-hotel="${h.id}" value="${q.nights}"></div><div class="field"><label>${esc(t("fees"))}</label><input inputmode="decimal" type="number" min="0" data-quote="fees" data-hotel="${h.id}" value="${q.fees||""}" placeholder="SAR"></div></div><div class="quote-total"><div><span>${esc(t("total"))}</span><strong>${total?`SAR ${money(total)}`:"—"}</strong></div><div class="button-row" style="margin:0"><a class="btn small ghost" href="${esc(h.map)}" target="_blank" rel="noopener">${icon("pin",13)}</a>${h.phone?`<a class="btn small ghost" href="${esc(h.phone)}">Call</a>`:""}<button type="button" class="btn small ${selected?"gold":"primary"}" data-action="select-hotel" data-hotel="${h.id}">${selected?esc(t("selected")):esc(t("selectHotel"))}</button></div></div></article>`}
+    function renderMore(){return `<div class="section-head"><div><h2>${esc(t("moreTitle"))}</h2><p>${esc(t("saveAuto"))}</p></div></div><div class="segmented">${[["family",t("family")],["packing",t("packing")],["return",t("return")],["settings",t("settings")]].map(([id,label])=>`<button type="button" class="${state.moreTab===id?"active":""}" data-more-tab="${id}">${esc(label)}</button>`).join("")}</div>${state.moreTab==="family"?renderFamily():state.moreTab==="packing"?renderPacking():state.moreTab==="return"?renderReturn():renderSettings()}`}
+    function renderFamily(){const a=MEMBERS.filter(m=>state.cars[m.id]==="A").length,b=MEMBERS.filter(m=>state.cars[m.id]==="B").length,p=presentCount();return `<div class="car-summary"><div class="car-card"><span>${esc(t("carA"))}</span><strong>${a} / 13</strong></div><div class="car-card"><span>${esc(t("carB"))}</span><strong>${b} / 13</strong></div></div><div class="button-row" style="margin:0 0 12px"><button type="button" class="btn primary" data-action="all-present">${icon("check",15)} ${esc(t("allPresent"))}</button><button type="button" class="btn ghost" data-action="clear-present">${esc(t("clear"))}</button><span class="tag teal">${p}/13 ${esc(t("present"))}</span></div><div class="member-list">${MEMBERS.map(m=>`<div class="member-row"><div class="avatar">${esc(initials(m.name))}</div><div class="member-copy"><strong>${esc(l(m.name))}</strong><span>${esc(m.role)}</span></div><div class="member-control"><button type="button" class="present-toggle ${state.present[m.id]?"on":""}" data-action="toggle-present" data-member="${m.id}" aria-label="${esc(t("present"))}">${icon("check",15)}</button><select class="car-select" data-car="${m.id}" aria-label="Car"><option value="">—</option><option value="A" ${state.cars[m.id]==="A"?"selected":""}>A</option><option value="B" ${state.cars[m.id]==="B"?"selected":""}>B</option></select></div></div>`).join("")}</div><div class="sp12"></div><div class="notice">${icon("users",18)}<div>${state.lang==="bn"?"প্রতি departure, crowded place ও hotel checkout-এর আগে নতুন headcount করুন।":"Run a fresh headcount before every departure, crowded place and hotel checkout."}</div></div>`}
+    function renderPacking(){return CHECKLISTS.map(c=>{const done=c.items.filter(i=>state.packing[i.id]).length;return `<section class="checklist-group"><div class="checklist-title"><strong>${esc(l(c.title))}</strong><span>${done}/${c.items.length}</span></div>${c.items.map(i=>`<div class="check-item ${state.packing[i.id]?"done":""}" data-action="toggle-pack" data-id="${i.id}"><span class="box">${icon("check",14)}</span><span>${esc(l(i.text))}</span></div>`).join("")}</section>`}).join("")}
+    function renderReturn(){const opts=[
+      ["direct",t("directDrive"),state.lang==="bn"?"দুই গাড়ি Riyadh নিতে পারবেন, কিন্তু drive খুব দীর্ঘ। Pre-dawn departure, driver rotation, live Maps, প্রতি ২ ঘণ্টায় break এবং stop-and-sleep rule বাধ্যতামূলক।":"Both cars reach Riyadh, but the drive is very long. Use pre-dawn departure, driver rotation, live Maps, two-hour breaks and a strict stop-and-sleep rule."],
+      ["split",t("splitFlight"),state.lang==="bn"?"Family airport থেকে উড়বে, নির্ধারিত drivers গাড়ি ফিরিয়ে নেবে। Flight, airport, child logistics ও driver safety সম্পূর্ণ confirm না হলে এই option নেবেন না।":"Family flies while assigned drivers return the cars. Use only after flights, airport transfers, child logistics and driver safety are fully confirmed."],
+      ["stopover",t("stopover"),state.lang==="bn"?"এক দিনে Riyadh পৌঁছানো unsafe হলে route-এর মাঝামাঝি verified hotel-এ rest করে পরদিন চালান।":"If reaching Riyadh in one day becomes unsafe, rest at a verified hotel en route and continue the next day."]
+    ];return `<div class="option-list">${opts.map(([id,title,desc])=>`<button type="button" class="option-card ${state.returnMode===id?"selected":""}" data-return="${id}"><span class="option-radio"></span><h3>${esc(title)}</h3><p>${esc(desc)}</p></button>`).join("")}</div><div class="sp12"></div><div class="button-row"><a class="btn blue" href="${RIYADH_ROUTE}" target="_blank" rel="noopener">${icon("route",15)} ${esc(t("openMaps"))}</a><a class="btn ghost" href="${ABT_ROUTE}" target="_blank" rel="noopener">ABT route</a></div><div class="sp12"></div><div class="notice red">${icon("sun",18)}<div>${esc(t("safetyText"))}</div></div>`}
+    function renderSettings(){return `<div class="panel panel-pad"><div class="quote-grid"><div class="field"><label>${esc(t("hotelName"))}</label><input type="text" data-setting="hotelName" value="${esc(state.settings.hotelName)}"></div><div class="field"><label>${esc(t("roomNumber"))}</label><input type="text" data-setting="room" value="${esc(state.settings.room)}"></div><div class="field"><label>${esc(t("emergency"))}</label><input type="tel" data-setting="emergency" value="${esc(state.settings.emergency)}"></div><div class="field"><label>${esc(t("budget"))}</label><input type="number" min="0" data-setting="budgetTarget" value="${state.budgetTarget}"></div></div><div class="sp12"></div><div class="field"><label>Family note</label><textarea data-setting="note">${esc(state.settings.note)}</textarea></div><div class="button-row"><a class="btn primary" href="${CURRENT_HOTEL}" target="_blank" rel="noopener">${icon("pin",15)} ${esc(t("hotelName"))}</a><button class="btn ghost" type="button" data-action="location">${icon("pin",15)} ${esc(t("useLocation"))}</button></div></div>
+      <div class="sp12"></div><div class="panel panel-pad"><h3 style="margin:0 0 10px">${esc(t("shareTrip"))}</h3><div class="share-list"><button type="button" class="share-option" data-action="share-sheet"><span class="share-icon">${icon("share",19)}</span><span><strong>${esc(t("shareTrip"))}</strong><span>${esc(t("shareWhatsApp"))} · PDF · Notes</span></span></button><button type="button" class="share-option" data-action="calendar"><span class="share-icon">${icon("calendar",19)}</span><span><strong>${esc(t("calendar"))}</strong><span>${esc(t("addCalendar"))}</span></span></button><button type="button" class="share-option" data-action="install"><span class="share-icon">${icon("download",19)}</span><span><strong>${esc(t("install"))}</strong><span>${esc(t("installText"))}</span></span></button></div></div>
+      <div class="sp12"></div><div class="panel panel-pad"><div class="button-row" style="margin:0"><button class="btn ghost" type="button" data-action="export">${icon("download",15)} ${esc(t("export"))}</button><button class="btn ghost" type="button" data-action="import">${icon("upload",15)} ${esc(t("import"))}</button><button class="btn danger" type="button" data-action="reset">${esc(t("reset"))}</button></div></div>`}
+
+    function tripSummary(){
+      const day=todayDay(),next=nextActivity(),sel=selectedHotel(),lines=[
+        `✅ ${t("tripTitle")} · Verified-only`,
+        `${t("tripRoute")}`,
+        `14–19 Aug 2026 · 13 ${t("travellers")} · 2 ${t("cars")}`,
+        "",
+        `${t("today")}: ${l(day.title)}`,
+        next?`${t("next")}: ${l(next.day.short)} ${next.activity.time} — ${l(next.activity.title)}`:"",
+        `${t("hotelName")}: ${state.settings.hotelName||"Elhane Hotel"}${state.settings.room?` · ${state.settings.room}`:""}`,
+        `${t("hotel")}: ${sel?sel.name:t("notSelected")}`,
+        `${t("return")}: ${state.returnMode==="direct"?t("directDrive"):state.returnMode==="split"?t("splitFlight"):t("stopover")}`,
+        "",
+        `App: ${appUrl()}`,
+        `Hotel Maps: ${CURRENT_HOTEL}`,
+        `Red Sea route: ${BEACH_ROUTE}`,
+        `Riyadh route: ${RIYADH_ROUTE}`
+      ];
+      if(state.settings.emergency)lines.push(`Emergency: ${state.settings.emergency}`);return lines.filter(Boolean).join("\n")
+    }
+    async function copyText(text){
+      try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);return}throw new Error("fallback")}catch(_){const ta=document.createElement("textarea");ta.value=text;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove()}
+    }
+    function toast(msg){const el=document.getElementById("toast");el.textContent=msg;el.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove("show"),2200)}
+    function openSheet(title,html){document.getElementById("sheetTitle").textContent=title;document.getElementById("sheetBody").innerHTML=html;document.getElementById("sheetWrap").hidden=false;document.body.style.overflow="hidden"}
+    function closeSheet(){document.getElementById("sheetWrap").hidden=true;document.body.style.overflow=""}
+    function shareSheet(){openSheet(t("shareTrip"),`<div class="share-list"><button type="button" class="share-option" data-action="share-whatsapp"><span class="share-icon">${icon("share",19)}</span><span><strong>${esc(t("shareWhatsApp"))}</strong><span>WhatsApp opens with the full plan prefilled</span></span></button><button type="button" class="share-option" data-action="native-share"><span class="share-icon">${icon("share",19)}</span><span><strong>${esc(t("nativeShare"))}</strong><span>AirDrop, Messages, Mail and more</span></span></button><button type="button" class="share-option" data-action="copy-notes"><span class="share-icon">${icon("note",19)}</span><span><strong>${esc(t("copyNotes"))}</strong><span>Paste directly into Apple Notes</span></span></button><button type="button" class="share-option" data-action="print"><span class="share-icon">${icon("download",19)}</span><span><strong>${esc(t("printPdf"))}</strong><span>${esc(t("pdfHelp"))}</span></span></button><button type="button" class="share-option" data-action="copy-link"><span class="share-icon">${icon("route",19)}</span><span><strong>${esc(t("copyLink"))}</strong><span>${esc(appUrl())}</span></span></button></div>`)}
+    function routeSheet(){openSheet(t("route"),`<div class="share-list"><a class="share-option" href="${CURRENT_HOTEL}" target="_blank" rel="noopener"><span class="share-icon">${icon("hotel",19)}</span><span><strong>Elhane Hotel</strong><span>${esc(t("openMaps"))}</span></span></a><a class="share-option" href="${BEACH_ROUTE}" target="_blank" rel="noopener"><span class="share-icon">${icon("waves",19)}</span><span><strong>Al Bahah → Al Nakheel Beach</strong><span>Verified public beach route</span></span></a><a class="share-option" href="${RIYADH_ROUTE}" target="_blank" rel="noopener"><span class="share-icon">${icon("route",19)}</span><span><strong>Al Qunfudhah → Riyadh</strong><span>Long convoy route · live Maps</span></span></a></div>`)}
+    async function shareNative(){try{if(navigator.share){await navigator.share({title:t("tripTitle"),text:tripSummary(),url:appUrl()})}else{await copyText(tripSummary());toast(t("copied"))}}catch(e){if(e&&e.name!=="AbortError")toast(t("unavailable"))}}
+    function shareWhatsApp(text=tripSummary()){window.open(`https://wa.me/?text=${encodeURIComponent(text)}`,"_blank","noopener")}
+    function sharePlace(id){const p=PLACES.find(x=>x.id===id);if(p)shareWhatsApp(`${l(p.name)}\n${l(p.sub)}\nGoogle Maps: ${p.g}\nApple Maps: ${p.a}`)}
+    function renderPrint(){
+      const sel=selectedHotel(),total=selectedTotal();
+      document.getElementById("printRoot").innerHTML=`<h1>${esc(t("tripTitle"))}</h1><p>${esc(t("tripRoute"))} · 14–19 August 2026 · 13 people · 2 cars</p><div class="print-grid"><div class="print-card"><strong>Current hotel</strong><br>${esc(state.settings.hotelName)} ${esc(state.settings.room||"")}<br>${esc(CURRENT_HOTEL)}</div><div class="print-card"><strong>Beach hotel</strong><br>${esc(sel?sel.name:t("notSelected"))}${total?`<br>SAR ${money(total)}`:""}<br>Return: ${esc(state.returnMode==="direct"?t("directDrive"):state.returnMode==="split"?t("splitFlight"):t("stopover"))}</div></div>${DAYS.map(d=>`<section class="print-day"><h2>${esc(l(d.short))} — ${esc(l(d.title))}</h2><p>${esc(l(d.loc))} · ${esc(l(d.summary))}</p><table>${d.activities.map(a=>`<tr><td>${esc(a.time)}</td><td>${state.completed[a.id]?"✓ ":""}<strong>${esc(l(a.title))}</strong><br>${esc(l(a.details))}${a.placeId&&mapLink(a.placeId)?`<br>${esc(mapLink(a.placeId))}`:""}</td></tr>`).join("")}</table></section>`).join("")}<div class="print-note"><strong>${esc(t("safety"))}</strong><p>${esc(t("safetyText"))}</p></div><div class="print-footer">Generated from K2Fam Trip · ${esc(appUrl())}</div>`
+    }
+    function printTrip(){renderPrint();setTimeout(()=>window.print(),80)}
+    function download(name,text,type){const blob=new Blob([text],{type}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500)}
+    function exportState(){save();download("k2fam-trip-2026-backup.json",JSON.stringify(state,null,2),"application/json");toast(t("doneToast"))}
+    function exportCalendar(){
+      const pad=n=>String(n).padStart(2,"0"),dateBasic=s=>s.replaceAll("-","");let events="";
+      for(const d of DAYS)for(const a of d.activities){const [hh,mm]=a.time.split(":").map(Number),endH=Math.min(23,hh+1);events+=`BEGIN:VEVENT\r\nUID:${a.id}@k2fam-trip\r\nDTSTAMP:20260814T000000Z\r\nDTSTART;TZID=Asia/Riyadh:${dateBasic(d.date)}T${pad(hh)}${pad(mm)}00\r\nDTEND;TZID=Asia/Riyadh:${dateBasic(d.date)}T${pad(endH)}${pad(mm)}00\r\nSUMMARY:${l(a.title).replace(/[\n,;]/g," ")}\r\nDESCRIPTION:${l(a.details).replace(/[\n,;]/g," ")}\r\nEND:VEVENT\r\n`}
+      const ics=`BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//K2Fam//Family Trip 2026//EN\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\n${events}END:VCALENDAR\r\n`;download("k2fam-trip-2026.ics",ics,"text/calendar;charset=utf-8");toast(t("doneToast"))
+    }
+    async function useLocation(){if(!navigator.geolocation){toast(t("unavailable"));return}navigator.geolocation.getCurrentPosition(async p=>{const url=`https://www.google.com/maps/search/?api=1&query=${p.coords.latitude},${p.coords.longitude}`;await copyText(url);toast(t("copied"))},()=>toast(t("unavailable")),{enableHighAccuracy:true,timeout:10000,maximumAge:30000})}
+    async function fetchWeather(){
+      state.weatherStatus="loading";render();
+      const cities=[[
+        "albaha",20.0628511,41.5183857],["coast",19.1264,41.0789]
+      ];
+      try{
+        for(const [id,lat,lon] of cities){
+          const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m&daily=temperature_2m_max,temperature_2m_min,wind_gusts_10m_max&timezone=Asia%2FRiyadh&forecast_days=7`;
+          const r=await fetch(u,{cache:"no-store"});if(!r.ok)throw new Error("weather");const j=await r.json(),idx=0;
+          state.weather[id]={temp:j.current?.temperature_2m??j.daily?.temperature_2m_max?.[idx],high:j.daily?.temperature_2m_max?.[idx],low:j.daily?.temperature_2m_min?.[idx],gust:j.daily?.wind_gusts_10m_max?.[idx],updated:new Date().toISOString()};
+        }
+        state.weatherStatus="ok";save();render();
+      }catch(_){state.weatherStatus="failed";save();render();toast(t("unavailable"))}
+    }
+    async function installApp(){
+      if(deferredInstall){deferredInstall.prompt();await deferredInstall.userChoice;deferredInstall=null;return}
+      openSheet(t("install"),`<div class="notice teal">${icon("download",18)}<div>${esc(t("installText"))}</div></div><div class="sp12"></div><div class="panel panel-pad"><strong>1.</strong> Safari-তে app খুলুন<br><br><strong>2.</strong> নিচের Share icon চাপুন<br><br><strong>3.</strong> “Add to Home Screen” নির্বাচন করুন</div>`)
+    }
+    function importState(file){if(!file)return;const reader=new FileReader();reader.onload=()=>{try{state=normalize(JSON.parse(reader.result));save();render();toast(t("doneToast"))}catch(_){toast(t("unavailable"))}};reader.readAsText(file)}
+
+    document.addEventListener("click",async e=>{
+      const el=e.target.closest("[data-tab],[data-action],[data-day],[data-filter],[data-more-tab],[data-return]");if(!el)return;
+      if(el.dataset.tab){state.tab=el.dataset.tab;render();document.getElementById("main").focus();return}
+      if(el.dataset.day){state.activeDay=el.dataset.day;state.tab="plan";render();return}
+      if(el.dataset.filter){state.placeFilter=el.dataset.filter;render();return}
+      if(el.dataset.moreTab){state.moreTab=el.dataset.moreTab;render();return}
+      if(el.dataset.return){state.returnMode=el.dataset.return;render();toast(t("doneToast"));return}
+      const a=el.dataset.action;
+      if(a==="language"){state.lang=state.lang==="bn"?"en":"bn";render()}
+      else if(a==="share-sheet")shareSheet();
+      else if(a==="close-sheet")closeSheet();
+      else if(a==="route-sheet")routeSheet();
+      else if(a==="share-whatsapp"){shareWhatsApp();closeSheet()}
+      else if(a==="native-share"){await shareNative();closeSheet()}
+      else if(a==="copy-notes"){await copyText(tripSummary());toast(t("copied"));closeSheet()}
+      else if(a==="copy-link"){await copyText(appUrl());toast(t("copied"));closeSheet()}
+      else if(a==="print"){closeSheet();printTrip()}
+      else if(a==="toggle-activity"){state.completed[el.dataset.id]=!state.completed[el.dataset.id];render()}
+      else if(a==="share-place")sharePlace(el.dataset.place);
+      else if(a==="select-hotel"){state.selectedHotel=el.dataset.hotel;render();toast(t("doneToast"))}
+      else if(a==="go-family"){state.tab="more";state.moreTab="family";render()}
+      else if(a==="all-present"){MEMBERS.forEach(m=>state.present[m.id]=true);render()}
+      else if(a==="clear-present"){MEMBERS.forEach(m=>state.present[m.id]=false);render()}
+      else if(a==="toggle-present"){state.present[el.dataset.member]=!state.present[el.dataset.member];render()}
+      else if(a==="toggle-pack"){state.packing[el.dataset.id]=!state.packing[el.dataset.id];render()}
+      else if(a==="refresh-weather")fetchWeather();
+      else if(a==="export")exportState();
+      else if(a==="import")document.getElementById("importFile").click();
+      else if(a==="calendar")exportCalendar();
+      else if(a==="install")installApp();
+      else if(a==="location")useLocation();
+      else if(a==="reset"){if(confirm(state.lang==="bn"?"সব local data reset করবেন?":"Reset all local data?")){storage.removeItem(STORE_KEY);state=normalize(null);render()}}
+    });
+    document.addEventListener("change",e=>{
+      const el=e.target;
+      if(el.matches("[data-car]")){state.cars[el.dataset.car]=el.value;save();render()}
+      else if(el.matches("[data-quote]")){const q=state.hotelQuotes[el.dataset.hotel];q[el.dataset.quote]=Math.max(0,Number(el.value)||0);save();render()}
+      else if(el.id==="importFile"){importState(el.files?.[0]);el.value=""}
+      else if(el.matches("[data-setting]")){const k=el.dataset.setting;if(k==="budgetTarget")state.budgetTarget=Math.max(0,Number(el.value)||0);else state.settings[k]=el.value;save();render()}
+    });
+    document.addEventListener("input",e=>{const el=e.target;if(el.matches("[data-setting]")&&!['budgetTarget'].includes(el.dataset.setting)){state.settings[el.dataset.setting]=el.value;save()}});
+    document.getElementById("sheetWrap").addEventListener("click",e=>{if(e.target.id==="sheetWrap")closeSheet()});
+    document.addEventListener("keydown",e=>{if(e.key==="Escape")closeSheet()});
+    window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredInstall=e});
+    if("serviceWorker" in navigator&&["http:","https:"].includes(location.protocol)){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}))}
+
+
+    const gate=document.getElementById("accessGate"),gateForm=document.getElementById("gateForm"),gateCode=document.getElementById("gateCode"),gateError=document.getElementById("gateError");
+    function unlockGate(){sessionStorage.setItem("k2fam-access","ok");gate.hidden=true;gateCode.value=""}
+    if(sessionStorage.getItem("k2fam-access")==="ok")gate.hidden=true;
+    gateForm.addEventListener("submit",e=>{e.preventDefault();if(gateCode.value.trim()==="2026"){unlockGate()}else{gateError.textContent="Wrong family code";gateCode.select()}});
+
+    render();
+    const cachedFresh=state.weather.albaha&&Date.now()-new Date(state.weather.albaha.updated).getTime()<60*60*1000;
+    if(!cachedFresh)setTimeout(fetchWeather,300);
+    setInterval(()=>{if(state.tab==="home")render()},60000);
+  })();
+  </script>
+</body>
+</html>
